@@ -1,0 +1,54 @@
+mixed-port: 51824
+allow-lan: true
+mode: rule
+log-level: info
+ipv6: false
+authorization:
+  a:b
+dns:
+  enable: true
+  listen: 127.0.0.1:8853
+  default-nameserver:
+    - 223.5.5.5
+    - 1.0.0.1
+  ipv6: false
+  enhanced-mode: redir-host
+  nameserver:
+    - https://223.6.6.6/dns-query
+    - https://rubyfish.cn/dns-query
+    - https://dns.pub/dns-query
+  fallback:
+    - https://dns.rubyfish.cn/dns-query
+    - https://public.dns.iij.jp/dns-query
+    - tls://8.8.4.4
+  fallback-filter:
+    geoip: true
+    ipcidr:
+      - 240.0.0.0/4
+      - 0.0.0.0/32
+      - 127.0.0.1/32
+    domain:
+      - +.google.com
+      - +.facebook.com
+      - +.twitter.com
+      - +.youtube.com
+      - +.xn--ngstr-lra8j.com
+      - +.google.cn
+      - +.googleapis.cn
+      - +.googleapis.com
+      - +.gvt1.com
+
+proxies:
+  - name: bandwagon
+    type: http
+    server: 10.0.0.2
+    port: 8888
+
+proxy-groups:
+  - name: "PROXY"
+    type: select
+    proxies:
+     - bandwagon
+
+rules:
+  - MATCH,PROXY

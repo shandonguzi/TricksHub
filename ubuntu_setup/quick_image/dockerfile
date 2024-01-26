@@ -1,0 +1,63 @@
+FROM ubuntu:latest
+ENV TZ Asia/Shanghai
+ENV DISPLAY :1
+ENV PATH=/code:$PATH
+ARG DEBIAN_FRONTEND=noninteractive
+ENV LANG C.UTF-8
+
+RUN sed -i 's/archive.ubuntu.com/mirrors.ustc.edu.cn/g' /etc/apt/sources.list
+RUN sed -i 's/security.ubuntu.com/mirrors.ustc.edu.cn/g' /etc/apt/sources.list
+
+ARG APT_ESSENTIAL='apt-utils git systemctl ssh zsh curl wget python3 python3-dev pip fontconfig tzdata cron default-libmysqlclient-dev build-essential'
+ARG APT_SUB='unzip vim lsof net-tools apt-utils mysql-client iputils-ping x11vnc xvfb fluxbox'
+
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
+RUN apt update && apt upgrade -y
+RUN apt install $APT_ESSENTIAL -y
+RUN apt install $APT_SUB -y
+RUN apt autoremove && apt clean
+
+RUN sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+RUN git clone --depth=1 https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions
+RUN git clone --depth=1 https://github.com/zsh-users/zsh-autosuggestions.git ${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-autosuggestions
+RUN git clone --depth=1 https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+
+RUN echo 'export ZSH="$HOME/.oh-my-zsh"' > $HOME/.zshrc
+
+RUN echo 'ZSH_THEME="ys"' >> $HOME/.zshrc
+RUN echo 'plugins=(git zsh-autosuggestions zsh-syntax-highlighting sudo)' >> $HOME/.zshrc
+RUN echo 'source $ZSH/oh-my-zsh.sh' >> $HOME/.zshrc
+RUN echo 'fpath+=~/.oh-my-zsh/custom/plugins/zsh-completions/src' >> $HOME/.zshrc
+RUN echo 'zsh' >> $HOME/.bashrc
+
+RUN systemctl enable ssh
+RUN systemctl enable cron
+
+COPY ./build /build
+RUN chmod +x /build -R
+# RUN /build/chrome_install.sh
+
+COPY /build/SimHei.ttf /usr/share/fonts/SimHei.ttf
+RUN fc-cache -fv
+
+COPY ./config/requirements.txt /requirements.txt
+
+RUN python3 -m pip install --upgrade pip -i https://pypi.tuna.tsinghua.edu.cn/simple
+RUN pip install -r /requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
+
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+
+COPY ./config/id_rsa.pub /id_rsa.pub
+
+RUN mkdir /log
+RUN mkdir /run/sshd
+RUN mkdir /root/.ssh
+RUN cat /id_rsa.pub >> ~/.ssh/authorized_keys
+
+RUN echo "export DISPLAY=:1" >> ~/.zshrc
+RUN echo "export DISPLAY=:1" >> ~/.profile
+
+ENTRYPOINT [ "/entrypoint.sh" ]

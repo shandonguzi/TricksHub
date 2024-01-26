@@ -1,0 +1,27 @@
+name: ubuntu_docker
+services:
+
+  ubuntu_docker:
+    build: .
+    container_name: ubuntu_docker
+    shm_size: '2gb'
+
+    volumes:
+      - type: bind
+        source: code
+        target: /code
+
+    ports:
+      - 13201-13210:13201-13210
+      - 13200:22
+
+    deploy:
+        resources:
+          limits:
+            cpus: '4'
+            memory: 2048M
+          reservations:
+            cpus: '4'
+            memory: 2048M
+
+    restart: always

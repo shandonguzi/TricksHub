@@ -1,0 +1,12 @@
+pymysql
+numpy
+pandas
+requests
+sqlalchemy
+websocket-client
+ipython
+dask
+ipykernel
+jupyter
+scikit-learn
+statsmodels

@@ -1,33 +1,40 @@
-# 🌟 linux & docker & leetcode 🌟
+# linux & docker & leetcode
 
-## 📚 leetcode
-**leetcode C++ trick**
+## leetcode
 
-## 🌐 nextcloud
-**个人云盘，重复利用老linux实体机，貌似Apache2搭配端口转发更方便**
+- C++ STL / python
+- dp ✅ 
+- 贪心 ⏭️
 
-## ✨ ubuntu_setup
+## nextcloud
 
-- **VPS脚本**
+- 云盘，重复利用老linux实体机
+- 本机Apache2搭配端口转发更方便
 
-- **docker ubuntu quick image**
+## ubuntu_setup
 
-## 🎓 web_config
+- VPS脚本
 
-**梯子实战，目前已白嫖到oracle always free vps，正在抢 4/24 ARM实例**
+- docker ubuntu quick image
 
-**TODO：透明代理famliy科学上网**
+## web_config
 
-> redmi ax6000
+已白嫖oracle always free vps，正在抢 4/24 ARM实例 💤
+
+已实现透明代理全home科学上网
+
+> redmi ax6000 | immortalwrt | Clash
 > 
-> immortalwrt
+> 刷机教程参考: [OpenRouter](https://www.youtube.com/watch?v=KH318DzR7lA)
 >
-> clash
+> 路由相关知识参考: [不良林](https://www.youtube.com/watch?v=JfSJmPFiL_s)
+>
+> 光猫路由(桥接最好)，路由器和 `oracle vps` 通过 `wireguard` 通信（路由器端口9999），设置规则重定向所有流量至1041
 
-## 📋 docker-compose.yaml
-- **homepage：有点鸡肋的菜单**
-- **snapdrop：airdrop**
-- **web：Apache2 🆒**
-- **server + gitea_db：局域网gitea**
+## docker-compose.yaml
+- homepage：有点鸡肋的菜单
+- snapdrop：airdrop
+- web：Apache2 🆒
+- server + gitea_db：局域网gitea
 
 

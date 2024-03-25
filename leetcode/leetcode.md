@@ -449,6 +449,12 @@ public:
 };
 ```
 
+- ##### 611（番外篇，求三角形个数）
+
+![image-20240319174152438](/Users/nnxs/Library/Application Support/typora-user-images/image-20240319174152438.png)
+
+![image-20240319174552474](/Users/nnxs/Library/Application Support/typora-user-images/image-20240319174552474.png)
+
 ### 4.8 四数之和（18——非哈希表解法，哈希表很难写）
 
 - ##### 18（双指针法）
@@ -544,15 +550,15 @@ public:
 
 
 
-# n、动态规划（dp）
+# 6、动态规划（dp）
 
-### .1 动态规划基础
+### 6.1 动态规划基础
 
 ![img](https://code-thinking.cdn.bcebos.com/pics/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92-%E6%80%BB%E7%BB%93%E5%A4%A7%E7%BA%B21.jpg)
 
 ![image-20230517104549597](/Users/nnxs/Library/Application Support/typora-user-images/image-20230517104549597.png)
 
-### .2 斐波那契数（509）
+### 6.2 斐波那契数（509）
 
 - ##### 509
 
@@ -560,7 +566,7 @@ public:
 
 ![image-20230517103219309](/Users/nnxs/Library/Application Support/typora-user-images/image-20230517103219309.png)
 
-### .3 爬楼梯（70）
+### 6.3 爬楼梯（70）
 
 - ##### 70
 
@@ -568,7 +574,7 @@ public:
 
 ![image-20230519224857262](/Users/nnxs/Library/Application Support/typora-user-images/image-20230519224857262.png)
 
-### .4 使用最小花费爬楼梯（746）
+### 6.4 使用最小花费爬楼梯（746）
 
 - ##### 746
 
@@ -576,7 +582,7 @@ public:
 
 ![image-20230517142552146](/Users/nnxs/Library/Application Support/typora-user-images/image-20230517142552146.png)
 
-### .5 不同路径（62、63）
+### 6.5 不同路径（62、63）
 
 - ##### 62
 
@@ -596,7 +602,7 @@ public:
 
 ![image-20230517155049283](/Users/nnxs/Library/Application Support/typora-user-images/image-20230517155049283.png)
 
-### .6 整数拆分（343）
+### 6.6 整数拆分（343）
 
 - ##### 343
 
@@ -604,7 +610,9 @@ public:
 
 ![image-20230517163233157](/Users/nnxs/Library/Application Support/typora-user-images/image-20230517163233157.png)
 
-### .7 0-1背包问题（416）
+补充：dp[6]的24拆分，为什么不dp[2]dp[4]，因为dp[2]会拆成11，已经在1dp[5]考虑过了；同理dp[3]dp[3]，前面的dp[3]已经在2dp[4]考虑过了，因为3会拆成12和21，就算拆成111也在1dp[5]考虑过了
+
+### 6.7 0-1背包问题
 
 **0-1背包问题题目描述**：有n件物品和一个最多能背重量为w的背包。第i件物品的重量是weight[i]，得到的价值是value[i] 。每件物品只能用一次，求解将哪些物品装入背包里物品价值总和最大。假设物品信息如下，背包最多可装重量为4的物品。
 
@@ -657,7 +665,7 @@ int main() {
 - dp[j] 含义：容量为j的背包，所背的物品价值可以最大为dp[j]
 - 递推公式：dp[j] = max(dp[j], dp[j - weight[i]] + value[i])，即不放物品i和放物品i
 - 初始化：全0即可
-- 遍历顺序：先物品后重量（重量倒序遍历）
+- 遍历顺序：先物品后重量（重量倒序遍历）❗️❗️
 
 ![image-20230518002300437](/Users/nnxs/Library/Application Support/typora-user-images/image-20230518002300437.png)
 
@@ -684,13 +692,141 @@ int main() {
 }
 ```
 
-- ##### 416
+- ##### 416（01背包是否能装满，装满True）
 
 ![image-20230518003435485](/Users/nnxs/Library/Application Support/typora-user-images/image-20230518003435485.png)
 
 ![image-20230518005102371](/Users/nnxs/Library/Application Support/typora-user-images/image-20230518005102371.png)
 
-### .8 买卖股票的最佳时机（121、122、123、188）
+- ##### 1049（dp含义同上，本题其实就是尽量让石头分成重量相同的两堆，相撞之后剩下的石头最小，**这样就化解成01背包问题了**）
+
+![image-20240229201502074](/Users/nnxs/Library/Application Support/typora-user-images/image-20240229201502074.png)
+
+![image-20240229202435270](/Users/nnxs/Library/Application Support/typora-user-images/image-20240229202435270.png)
+
+- ##### 494（01背包有多少种方式装满）
+
+![image-20240302140301948](/Users/nnxs/Library/Application Support/typora-user-images/image-20240302140301948.png)
+
+![image-20240302143508149](/Users/nnxs/Library/Application Support/typora-user-images/image-20240302143508149.png)
+
+假设所有取正数的为left，所有取负数的为right，left+right=sums，left-right=target，所以left=(sums+target)/2
+
+- ##### 474（01背包二维背包容量，最多能装多少个物品）
+
+![image-20240302143704366](/Users/nnxs/Library/Application Support/typora-user-images/image-20240302143704366.png)
+
+![image-20240302143730994](/Users/nnxs/Library/Application Support/typora-user-images/image-20240302143730994.png)
+
+### 6.8 完全背包问题
+
+**完全背包问题题目描述**：有n件物品和一个最多能背重量为w的背包。第i件物品的重量是weight[i]，得到的价值是value[i] 。每件物品可以用无限次，求解将哪些物品装入背包里物品价值总和最大。**无限次的条件与01背包只差在遍历顺序上**❗️❗️
+
+```python
+# 一维dp的内层循环正序遍历，表示一个物品可以拿多次，且顺序可颠倒，原因看代码随想录笔记
+for i in range(len(weight)):  # 遍历物品
+    for j in range(weight[i], bagWeight + 1):  # 遍历背包容量
+        dp[j] = max(dp[j], dp[j - weight[i]] + value[i])
+```
+
+- ##### 52（[卡码网KamaCoder](https://kamacoder.com/)）
+
+![image-20240303110225109](/Users/nnxs/Library/Application Support/typora-user-images/image-20240303110225109.png)
+
+![image-20240303110340408](/Users/nnxs/Library/Application Support/typora-user-images/image-20240303110340408.png)
+
+- ##### 518（组合）
+
+![image-20240303112504595](/Users/nnxs/Library/Application Support/typora-user-images/image-20240303112504595.png)
+
+![image-20240303112930524](/Users/nnxs/Library/Application Support/typora-user-images/image-20240303112930524.png)
+
+- ##### 377（排列）
+
+![image-20240303114119329](/Users/nnxs/Library/Application Support/typora-user-images/image-20240303114119329.png)
+
+![image-20240303114248075](/Users/nnxs/Library/Application Support/typora-user-images/image-20240303114248075.png)
+
+- ##### 57（[卡码网KamaCoder](https://kamacoder.com/)）
+
+![image-20240305103519085](/Users/nnxs/Library/Application Support/typora-user-images/image-20240305103519085.png)
+
+![image-20240305103536685](/Users/nnxs/Library/Application Support/typora-user-images/image-20240305103536685.png)
+
+- ##### 322
+
+![image-20240305110433602](/Users/nnxs/Library/Application Support/typora-user-images/image-20240305110433602.png)
+
+![image-20240307163535955](/Users/nnxs/Library/Application Support/typora-user-images/image-20240307163535955.png)
+
+- ##### 279
+
+![image-20240307155428753](/Users/nnxs/Library/Application Support/typora-user-images/image-20240307155428753.png)
+
+![image-20240307163642616](/Users/nnxs/Library/Application Support/typora-user-images/image-20240307163642616.png)
+
+- ##### 139
+
+![image-20240309134947310](/Users/nnxs/Library/Application Support/typora-user-images/image-20240309134947310.png)
+
+![image-20240309135345828](/Users/nnxs/Library/Application Support/typora-user-images/image-20240309135345828.png)
+
+### 6.9 多重背包问题（基本不会考，只一个例题，解法同01）
+
+- ##### 56（[卡码网KamaCoder](https://kamacoder.com/)）
+
+![image-20240309145549305](/Users/nnxs/Library/Application Support/typora-user-images/image-20240309145549305.png)
+
+![image-20240309145948073](/Users/nnxs/Library/Application Support/typora-user-images/image-20240309145948073.png)
+
+### 6.10 背包问题总结
+
+![416.分割等和子集1](https://code-thinking-1253855093.file.myqcloud.com/pics/20230310000726.png)
+
+>1. 确定dp数组（dp table）以及下标的含义
+>2. 确定递推公式
+>3. dp数组如何初始化
+>4. 确定遍历顺序
+>5. 举例推导dp数组
+
+- ##### 递推公式
+
+| 类型                               | 递推公式                                           |
+| ---------------------------------- | -------------------------------------------------- |
+| 问能否能装满背包（或者最多装多少） | `dp[j] = max(dp[j], dp[j - nums[i]] + nums[i])`    |
+| 问装满背包有几种方法               | `dp[j] += dp[j - nums[i]]`                         |
+| 问背包装满最大价值                 | `dp[j] = max(dp[j], dp[j - weight[i]] + value[i])` |
+| 问装满背包所有物品的最小个数       | `dp[j] = min(dp[j - coins[i]] + 1, dp[j])`         |
+
+- ##### 遍历顺序
+
+  - 01背包：一维dp数组01背包只能先遍历物品再遍历背包容量，且第二层for循环是**从大到小**遍历
+  - 完全背包：
+    - **求组合数就是外层for循环遍历物品，内层for遍历背包**
+    - **求排列数就是外层for遍历背包，内层for循环遍历物品**
+    - 求最小数，那么两层for循环的先后顺序就无所谓
+
+### 6.11 打家劫舍（Ⅰ、Ⅱ、Ⅲ）
+
+- ##### 198（Ⅰ）
+
+![image-20240309152252959](/Users/nnxs/Library/Application Support/typora-user-images/image-20240309152252959.png)
+
+![image-20240309152528174](/Users/nnxs/Library/Application Support/typora-user-images/image-20240309152528174.png)
+
+- ##### 213（Ⅱ）
+
+![image-20240309153118122](/Users/nnxs/Library/Application Support/typora-user-images/image-20240309153118122.png)
+
+![image-20240309153514387](/Users/nnxs/Library/Application Support/typora-user-images/image-20240309153514387.png)
+
+- ##### 337（Ⅲ）
+
+![image-20240310095021269](/Users/nnxs/Library/Application Support/typora-user-images/image-20240310095021269.png)
+
+![image-20240310095124667](/Users/nnxs/Library/Application Support/typora-user-images/image-20240310095124667.png)
+
+### 6.12 买卖股票的最佳时机（121、122、123、188、309、714）
 
 - ##### 121
 
@@ -712,3 +848,165 @@ int main() {
 
 ![image-20230518163343983](/Users/nnxs/Library/Application Support/typora-user-images/image-20230518163343983.png)
 
+- ##### 188
+
+![image-20240310101947493](/Users/nnxs/Library/Application Support/typora-user-images/image-20240310101947493.png)
+
+![image-20240310102032883](/Users/nnxs/Library/Application Support/typora-user-images/image-20240310102032883.png)
+
+- ##### 309
+
+![image-20240311192814366](/Users/nnxs/Library/Application Support/typora-user-images/image-20240311192814366.png)
+
+![image-20240311195639174](/Users/nnxs/Library/Application Support/typora-user-images/image-20240311195639174.png)
+
+解释：0状态为持有股票状态（买入或之前就买入一直持有），1状态为保持股票卖出状态（冷冻期后），2状态为卖出股票状态（卖出），3状态为冷冻期（卖出后第一天），其关系举例如下
+
+| 0    | 0    | 0    | 2    | 3    | 1        | 1        | 1        | 0    | 2    | 3    |
+| ---- | ---- | ---- | ---- | ---- | -------- | -------- | -------- | ---- | ---- | ---- |
+| 买入 | 持有 | 持有 | 卖出 | 冷冻 | 保持卖出 | 保持卖出 | 保持卖出 | 买入 | 卖出 | 冷冻 |
+
+![img](https://code-thinking-1253855093.file.myqcloud.com/pics/518d5baaf33f4b2698064f8efb42edbf.png)
+
+- `dp[i][0] = max(dp[i-1][0], dp[i-1][1] - prices[i], dp[i-1][3] - prices[i])`：第i天买入，i-1天持有 / i-1天保持卖出i天买入 / i-1天冷冻i天买入
+- `dp[i][1] = max(dp[i-1][1], dp[i-1][3])`：第i天保持卖出，i-1天保持卖出 / i-1天冷冻
+- `dp[i][2] = dp[i-1][0] + prices[i]`：第i天卖出，i-1天持有
+- `dp[i][3] = dp[i-1][2]`：第i天冷冻，i-1天卖出
+
+
+
+- ##### 714
+
+![image-20240314155055416](/Users/nnxs/Library/Application Support/typora-user-images/image-20240314155055416.png)
+
+![image-20240314155241014](/Users/nnxs/Library/Application Support/typora-user-images/image-20240314155241014.png)
+
+（最好还是卖出减手续费，比较好理解）
+
+
+
+### 6.13 子序列问题
+
+- ##### 300（最长递增子序列）
+
+![image-20240315124148955](/Users/nnxs/Library/Application Support/typora-user-images/image-20240315124148955.png)
+
+![image-20240315124259853](/Users/nnxs/Library/Application Support/typora-user-images/image-20240315124259853.png)
+
+- ##### 674（最长连续递增序列）
+
+![image-20240315124711817](/Users/nnxs/Library/Application Support/typora-user-images/image-20240315124711817.png)
+
+![image-20240315124743822](/Users/nnxs/Library/Application Support/typora-user-images/image-20240315124743822.png)
+
+- ##### 718（最长重复子数组）
+
+![image-20240315124857164](/Users/nnxs/Library/Application Support/typora-user-images/image-20240315124857164.png)
+
+![image-20240315131100830](/Users/nnxs/Library/Application Support/typora-user-images/image-20240315131100830.png)
+
+- ##### 1143（最长公共子序列）
+
+![image-20240316130314556](/Users/nnxs/Library/Application Support/typora-user-images/image-20240316130314556.png)
+
+![image-20240316135004560](/Users/nnxs/Library/Application Support/typora-user-images/image-20240316135004560.png)
+
+至于此处为什么是`dp[i][j] = max(dp[i-1][j], dp[i][j-1])`，我理解的是如果`text1[i-1] == text2[j-1]`，相等时用到了这两个位置上的字母，所以取的是`dp[i][[j] = dp[i-1][j-1] + 1`；如果不相等，则没有用到这两个位置的字母，那么递推公式取max时就可以用到这两个位置保存的信息，相当于用到了这两个位置的字母
+
+- ##### 1035（不相交的线）
+
+![image-20240317205620536](/Users/nnxs/Library/Application Support/typora-user-images/image-20240317205620536.png)
+
+![image-20240317211955261](/Users/nnxs/Library/Application Support/typora-user-images/image-20240317211955261.png)
+
+- ##### 53
+
+![image-20240318101556262](/Users/nnxs/Library/Application Support/typora-user-images/image-20240318101556262.png)
+
+![image-20240318101753419](/Users/nnxs/Library/Application Support/typora-user-images/image-20240318101753419.png)
+
+- ##### 392（判断子序列）
+
+![image-20240318102259989](/Users/nnxs/Library/Application Support/typora-user-images/image-20240318102259989.png)
+
+![image-20240318104041178](/Users/nnxs/Library/Application Support/typora-user-images/image-20240318104041178.png)
+
+- ##### 115（不同的子序列）
+
+![image-20240318111059953](/Users/nnxs/Library/Application Support/typora-user-images/image-20240318111059953.png)
+
+![image-20240318111903067](/Users/nnxs/Library/Application Support/typora-user-images/image-20240318111903067.png)
+
+- ##### 583（两个字符串的删除操作）
+
+![image-20240318114507179](/Users/nnxs/Library/Application Support/typora-user-images/image-20240318114507179.png)
+
+![image-20240318115845424](/Users/nnxs/Library/Application Support/typora-user-images/image-20240318115845424.png)
+
+- ##### 72（编辑距离）
+
+![image-20240318140915981](/Users/nnxs/Library/Application Support/typora-user-images/image-20240318140915981.png)
+
+![image-20240318141221214](/Users/nnxs/Library/Application Support/typora-user-images/image-20240318141221214.png)
+
+- ##### 647
+
+![image-20240318142021819](/Users/nnxs/Library/Application Support/typora-user-images/image-20240318142021819.png)
+
+![image-20240318145437505](/Users/nnxs/Library/Application Support/typora-user-images/image-20240318145437505.png)
+
+- ##### 516
+
+![image-20240319163334146](/Users/nnxs/Library/Application Support/typora-user-images/image-20240319163334146.png)
+
+![image-20240319165206892](/Users/nnxs/Library/Application Support/typora-user-images/image-20240319165206892.png)
+
+# 七、贪心算法
+
+- ##### 455
+
+![image-20240321135307947](/Users/nnxs/Library/Application Support/typora-user-images/image-20240321135307947.png)
+
+![image-20240321135408713](/Users/nnxs/Library/Application Support/typora-user-images/image-20240321135408713.png)
+
+- ##### 376
+
+![image-20240321142923989](/Users/nnxs/Library/Application Support/typora-user-images/image-20240321142923989.png)
+
+![image-20240321143043995](/Users/nnxs/Library/Application Support/typora-user-images/image-20240321143043995.png)
+
+所有数一样的数组返回1，这是用例测试出来的
+
+- ##### 53
+
+![image-20240318101556262](/Users/nnxs/Library/Application Support/typora-user-images/image-20240318101556262.png)
+
+![image-20240322115017681](/Users/nnxs/Library/Application Support/typora-user-images/image-20240322115017681.png)
+
+- ##### 122
+
+![image-20230518160349069](/Users/nnxs/Library/Application Support/typora-user-images/image-20230518160349069.png)
+
+- ##### 55
+
+![image-20240324162007816](/Users/nnxs/Library/Application Support/typora-user-images/image-20240324162007816.png)
+
+![image-20240324162102533](/Users/nnxs/Library/Application Support/typora-user-images/image-20240324162102533.png)
+
+![image-20240324162254898](/Users/nnxs/Library/Application Support/typora-user-images/image-20240324162254898.png)
+
+- ##### 45
+
+![image-20240324162259468](/Users/nnxs/Library/Application Support/typora-user-images/image-20240324162259468.png)
+
+![image-20240324164708737](/Users/nnxs/Library/Application Support/typora-user-images/image-20240324164708737.png)
+
+![image-20240324165116085](/Users/nnxs/Library/Application Support/typora-user-images/image-20240324165116085.png)
+
+- ##### 1005
+
+![image-20240324165617330](/Users/nnxs/Library/Application Support/typora-user-images/image-20240324165617330.png)
+
+![image-20240324172004840](/Users/nnxs/Library/Application Support/typora-user-images/image-20240324172004840.png)
+
+![image-20240324172134390](/Users/nnxs/Library/Application Support/typora-user-images/image-20240324172134390.png)

@@ -2,8 +2,10 @@ export TZ=Asia/Shanghai
 export LANG=C.UTF-8
 export DEBIAN_FRONTEND=noninteractive
 
-sed -i 's/archive.ubuntu.com/mirrors.ustc.edu.cn/g' /etc/apt/sources.list
-sed -i 's/security.ubuntu.com/mirrors.ustc.edu.cn/g' /etc/apt/sources.list
+echo 'deb https://mirrors.ustc.edu.cn/ubuntu/ focal main restricted universe multiverse
+deb https://mirrors.ustc.edu.cn/ubuntu/ focal-updates main restricted universe multiverse
+deb https://mirrors.ustc.edu.cn/ubuntu/ focal-backports main restricted universe multiverse
+deb https://mirrors.ustc.edu.cn/ubuntu/ focal-security main restricted universe multiverse' > /etc/apt/sources.list
 
 export APT_ESSENTIAL='apt-utils git systemctl ssh zsh curl wget python3 python3-dev pip fontconfig tzdata cron default-libmysqlclient-dev build-essential nmap'
 export APT_SUB='unzip vim lsof net-tools apt-utils mysql-client iputils-ping x11vnc xvfb fluxbox zsh wireguard'
@@ -20,13 +22,19 @@ git clone --depth=1 https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:-$
 git clone --depth=1 https://github.com/zsh-users/zsh-autosuggestions.git ${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-autosuggestions
 git clone --depth=1 https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
-git clone --depth=1 https://github.com/junegunn/fzf.git ~/.fzf
+# powerlevel10k
+# git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
+# git clone --depth=1 https://github.com/junegunn/fzf.git ~/.fzf
+# cp config/.p10k.zsh /root/.p10k.zsh
+# cp config/.zshrc /root/.zshrc
+# cp config/.fzf.zsh /root/.fzf.zsh
 
-
-cp config/.p10k.zsh /root/.p10k.zsh
-cp config/.zshrc /root/.zshrc
-cp config/.fzf.zsh /root/.fzf.zsh
+# basic theme
+echo 'export ZSH="$HOME/.oh-my-zsh"' > $HOME/.zshrc
+echo 'ZSH_THEME="ys"' >> $HOME/.zshrc
+echo 'plugins=(git zsh-autosuggestions zsh-syntax-highlighting sudo)' >> $HOME/.zshrc
+echo 'source $ZSH/oh-my-zsh.sh' >> $HOME/.zshrc
+echo 'fpath+=~/.oh-my-zsh/custom/plugins/zsh-completions/src' >> $HOME/.zshrc
 
 echo 'zsh' >> $HOME/.bashrc
 
@@ -50,4 +58,4 @@ apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin do
 
 systemctl enable docker
 apt install docker-compose -y
-source /root/.zshrc
+source ~/.zshrc

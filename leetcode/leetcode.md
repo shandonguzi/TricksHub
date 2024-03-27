@@ -1010,3 +1010,67 @@ for i in range(len(weight)):  # 遍历物品
 ![image-20240324172004840](/Users/nnxs/Library/Application Support/typora-user-images/image-20240324172004840.png)
 
 ![image-20240324172134390](/Users/nnxs/Library/Application Support/typora-user-images/image-20240324172134390.png)
+
+- ##### 134
+
+![image-20240326102029784](/Users/nnxs/Library/Application Support/typora-user-images/image-20240326102029784.png)
+
+![image-20240326104541088](/Users/nnxs/Library/Application Support/typora-user-images/image-20240326104541088.png)
+
+- ##### 135（双维度切忌同时考虑，顾此失彼）
+
+![image-20240326104945207](/Users/nnxs/Library/Application Support/typora-user-images/image-20240326104945207.png)
+
+![image-20240326140656788](/Users/nnxs/Library/Application Support/typora-user-images/image-20240326140656788.png)
+
+同时考虑两边会顾此失彼，自己做的时候是同时考虑的，一上午总是会有特列报错，还是要分开考虑
+
+- ##### 860
+
+![image-20240326141753119](/Users/nnxs/Library/Application Support/typora-user-images/image-20240326141753119.png)
+
+![image-20240326141834825](/Users/nnxs/Library/Application Support/typora-user-images/image-20240326141834825.png)
+
+- ##### 406（双维度切忌同时考虑，顾此失彼）
+
+![image-20240326142039821](/Users/nnxs/Library/Application Support/typora-user-images/image-20240326142039821.png)
+
+![image-20240326144349392](/Users/nnxs/Library/Application Support/typora-user-images/image-20240326144349392.png)
+
+- ##### 452（区间题）
+
+![image-20240327093021836](/Users/nnxs/Library/Application Support/typora-user-images/image-20240327093021836.png)
+
+![image-20240327100244536](/Users/nnxs/Library/Application Support/typora-user-images/image-20240327100244536.png)
+
+- ##### 435（思路同上题）
+
+![image-20240327100617819](/Users/nnxs/Library/Application Support/typora-user-images/image-20240327100617819.png)
+
+![image-20240327101620429](/Users/nnxs/Library/Application Support/typora-user-images/image-20240327101620429.png)
+
+- ##### 763
+
+![image-20240327101737527](/Users/nnxs/Library/Application Support/typora-user-images/image-20240327101737527.png)
+
+![image-20240327105446151](/Users/nnxs/Library/Application Support/typora-user-images/image-20240327105446151.png)
+
+![image-20240327105636510](/Users/nnxs/Library/Application Support/typora-user-images/image-20240327105636510.png)
+
+- ##### 56
+
+![image-20240327111018000](/Users/nnxs/Library/Application Support/typora-user-images/image-20240327111018000.png)
+
+![image-20240327111713472](/Users/nnxs/Library/Application Support/typora-user-images/image-20240327111713472.png)
+
+- ##### 738
+
+![image-20240327114259606](/Users/nnxs/Library/Application Support/typora-user-images/image-20240327114259606.png)
+
+![image-20240327125840479](/Users/nnxs/Library/Application Support/typora-user-images/image-20240327125840479.png)
+
+- ##### 968
+
+![image-20240327130042405](/Users/nnxs/Library/Application Support/typora-user-images/image-20240327130042405.png)
+
+![image-20240327134229773](/Users/nnxs/Library/Application Support/typora-user-images/image-20240327134229773.png)

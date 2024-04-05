@@ -1074,3 +1074,121 @@ for i in range(len(weight)):  # 遍历物品
 ![image-20240327130042405](/Users/nnxs/Library/Application Support/typora-user-images/image-20240327130042405.png)
 
 ![image-20240327134229773](/Users/nnxs/Library/Application Support/typora-user-images/image-20240327134229773.png)
+
+# 八、回溯
+
+### 8.1 组合（77、17、39、40、216）
+
+- ##### 77
+
+![image-20240328133659932](/Users/nnxs/Library/Application Support/typora-user-images/image-20240328133659932.png)
+
+![image-20240328134947088](/Users/nnxs/Library/Application Support/typora-user-images/image-20240328134947088.png)
+
+- ##### 216
+
+![image-20240328135303705](/Users/nnxs/Library/Application Support/typora-user-images/image-20240328135303705.png)
+
+![image-20240328142525345](/Users/nnxs/Library/Application Support/typora-user-images/image-20240328142525345.png)
+
+- ##### 17
+
+![image-20240328150442341](/Users/nnxs/Library/Application Support/typora-user-images/image-20240328150442341.png)
+
+![image-20240328150401878](/Users/nnxs/Library/Application Support/typora-user-images/image-20240328150401878.png)
+
+最好是字母写个映射列表，代码不用这么长
+
+- ##### 39
+
+![image-20240329101055730](/Users/nnxs/Library/Application Support/typora-user-images/image-20240329101055730.png)
+
+![image-20240329102831480](/Users/nnxs/Library/Application Support/typora-user-images/image-20240329102831480.png)
+
+- ##### 40
+
+![image-20240329102943940](/Users/nnxs/Library/Application Support/typora-user-images/image-20240329102943940.png)
+
+![image-20240329105708929](/Users/nnxs/Library/Application Support/typora-user-images/image-20240329105708929.png)
+
+### 8.2 分割（131、93）
+
+- ##### 131
+
+![image-20240331141227853](/Users/nnxs/Library/Application Support/typora-user-images/image-20240331141227853.png)
+
+![image-20240331143521793](/Users/nnxs/Library/Application Support/typora-user-images/image-20240331143521793.png)
+
+- ##### 93
+
+![image-20240331143846659](/Users/nnxs/Library/Application Support/typora-user-images/image-20240331143846659.png)
+
+![image-20240331151132121](/Users/nnxs/Library/Application Support/typora-user-images/image-20240331151132121.png)
+
+### 8.3 子集（78、90、491（很类似子集问题））
+
+- ##### 78
+
+![image-20240331171753885](/Users/nnxs/Library/Application Support/typora-user-images/image-20240331171753885.png)
+
+![image-20240331173543904](/Users/nnxs/Library/Application Support/typora-user-images/image-20240331173543904.png)
+
+- ##### 90
+
+![image-20240331174357558](/Users/nnxs/Library/Application Support/typora-user-images/image-20240331174357558.png)
+
+![image-20240331174413301](/Users/nnxs/Library/Application Support/typora-user-images/image-20240331174413301.png)
+
+used思路同40题
+
+- ##### 491
+
+![image-20240331174618056](/Users/nnxs/Library/Application Support/typora-user-images/image-20240331174618056.png)
+
+![image-20240331175727933](/Users/nnxs/Library/Application Support/typora-user-images/image-20240331175727933.png)
+
+![image-20240331180613594](/Users/nnxs/Library/Application Support/typora-user-images/image-20240331180613594.png)
+
+### 8.4 排列（46、47）
+
+- ##### 46
+
+![image-20240331181401914](/Users/nnxs/Library/Application Support/typora-user-images/image-20240331181401914.png)
+
+![image-20240331201052310](/Users/nnxs/Library/Application Support/typora-user-images/image-20240331201052310.png)
+
+- ##### 47
+
+![image-20240331201116098](/Users/nnxs/Library/Application Support/typora-user-images/image-20240331201116098.png)
+
+![image-20240331202446382](/Users/nnxs/Library/Application Support/typora-user-images/image-20240331202446382.png)
+
+### 8.5 棋盘（51、37）
+
+- ##### 51
+
+![image-20240402131001857](/Users/nnxs/Library/Application Support/typora-user-images/image-20240402131001857.png)
+
+![image-20240402143625548](/Users/nnxs/Library/Application Support/typora-user-images/image-20240402143625548.png)
+
+每一行代表一层，只需要判断列、45、135是否违规
+
+- ##### 37
+
+![image-20240403104411436](/Users/nnxs/Library/Application Support/typora-user-images/image-20240403104411436.png)
+
+![image-20240403113216269](/Users/nnxs/Library/Application Support/typora-user-images/image-20240403113216269.png)
+
+### 8.6 其他（332）
+
+- ##### 332
+
+![image-20240401135844661](/Users/nnxs/Library/Application Support/typora-user-images/image-20240401135844661.png)
+
+直接按常理写超时！！
+
+![image-20240401184146440](/Users/nnxs/Library/Application Support/typora-user-images/image-20240401184146440.png)
+
+要用字典逆序解决才不会超时
+
+![image-20240401184642968](/Users/nnxs/Library/Application Support/typora-user-images/image-20240401184642968.png)

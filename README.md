@@ -3,8 +3,8 @@
 ## leetcode
 
 - C++ STL / python
-- dp 贪心 ✅ 
-- 回溯 ⏭️
+- dp 贪心 回溯 ✅ 
+- 图论 ⏭️
 
 ## nextcloud
 

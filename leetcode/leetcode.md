@@ -122,89 +122,89 @@ isalpha() | isupper() | isdigit() | islower()          // 是否字母、大写�
 
 - ##### 704
 
-![image-20230507164508463](/Users/nnxs/Library/Application Support/typora-user-images/image-20230507164508463.png)
+![image-20230507164508463](./leetcode/image-20230507164508463.png)
 
-![image-20230507164635689](/Users/nnxs/Library/Application Support/typora-user-images/image-20230507164635689.png)
+![image-20230507164635689](./leetcode/image-20230507164635689.png)
 
 - ##### 35
 
-![image-20230508163823044](/Users/nnxs/Library/Application Support/typora-user-images/image-20230508163823044.png)
+![image-20230508163823044](./leetcode/image-20230508163823044.png)
 
-![image-20230508163854828](/Users/nnxs/Library/Application Support/typora-user-images/image-20230508163854828.png)
+![image-20230508163854828](./leetcode/image-20230508163854828.png)
 
 - ##### 34
 
-![image-20230508164049499](/Users/nnxs/Library/Application Support/typora-user-images/image-20230508164049499.png)
+![image-20230508164049499](./leetcode/image-20230508164049499.png)
 
-![image-20230508164129695](/Users/nnxs/Library/Application Support/typora-user-images/image-20230508164129695.png)
+![image-20230508164129695](./leetcode/image-20230508164129695.png)
 
 - ##### 69
 
-![image-20230508164204547](/Users/nnxs/Library/Application Support/typora-user-images/image-20230508164204547.png)
+![image-20230508164204547](./leetcode/image-20230508164204547.png)
 
-![image-20230508164219387](/Users/nnxs/Library/Application Support/typora-user-images/image-20230508164219387.png)
+![image-20230508164219387](./leetcode/image-20230508164219387.png)
 
 - ##### 367
 
-![image-20230508164255307](/Users/nnxs/Library/Application Support/typora-user-images/image-20230508164255307.png)
+![image-20230508164255307](./leetcode/image-20230508164255307.png)
 
-![image-20230508164313707](/Users/nnxs/Library/Application Support/typora-user-images/image-20230508164313707.png)
+![image-20230508164313707](./leetcode/image-20230508164313707.png)
 
 ### 2.2 移除元素（27、26、283、844）
 
 - ##### 27
 
-![image-20230513144759722](/Users/nnxs/Library/Application Support/typora-user-images/image-20230513144759722.png)
+![image-20230513144759722](./leetcode/image-20230513144759722.png)
 
-![image-20230513144825090](/Users/nnxs/Library/Application Support/typora-user-images/image-20230513144825090.png)
+![image-20230513144825090](./leetcode/image-20230513144825090.png)
 
 - ##### 26
 
-![image-20230513145002373](/Users/nnxs/Library/Application Support/typora-user-images/image-20230513145002373.png)
+![image-20230513145002373](./leetcode/image-20230513145002373.png)
 
-![image-20230513145033859](/Users/nnxs/Library/Application Support/typora-user-images/image-20230513145033859.png)
+![image-20230513145033859](./leetcode/image-20230513145033859.png)
 
 - ##### 283
 
-![image-20230513145141636](/Users/nnxs/Library/Application Support/typora-user-images/image-20230513145141636.png)
+![image-20230513145141636](./leetcode/image-20230513145141636.png)
 
-![image-20230513145159902](/Users/nnxs/Library/Application Support/typora-user-images/image-20230513145159902.png)
+![image-20230513145159902](./leetcode/image-20230513145159902.png)
 
 - ##### 844
 
-![image-20230513145422540](/Users/nnxs/Library/Application Support/typora-user-images/image-20230513145422540.png)
+![image-20230513145422540](./leetcode/image-20230513145422540.png)
 
-![image-20230513145519326](/Users/nnxs/Library/Application Support/typora-user-images/image-20230513145519326.png)
+![image-20230513145519326](./leetcode/image-20230513145519326.png)
 
 ### 2.3 有序数组的平方（977）
 
 - ##### 977
 
-![image-20230513145745290](/Users/nnxs/Library/Application Support/typora-user-images/image-20230513145745290.png)
+![image-20230513145745290](./leetcode/image-20230513145745290.png)
 
-![image-20230513150120450](/Users/nnxs/Library/Application Support/typora-user-images/image-20230513150120450.png)
+![image-20230513150120450](./leetcode/image-20230513150120450.png)
 
-![image-20230513150239189](/Users/nnxs/Library/Application Support/typora-user-images/image-20230513150239189.png)
+![image-20230513150239189](./leetcode/image-20230513150239189.png)
 
-![image-20230513150546780](/Users/nnxs/Library/Application Support/typora-user-images/image-20230513150546780.png)
+![image-20230513150546780](./leetcode/image-20230513150546780.png)
 
 ### 2.4 长度最小的子数组（209、904、76）
 
 - ##### 209
 
-![image-20230513150904651](/Users/nnxs/Library/Application Support/typora-user-images/image-20230513150904651.png)
+![image-20230513150904651](./leetcode/image-20230513150904651.png)
 
-![image-20230513151107343](/Users/nnxs/Library/Application Support/typora-user-images/image-20230513151107343.png)
+![image-20230513151107343](./leetcode/image-20230513151107343.png)
 
 - ##### 904
 
-![image-20230513151247277](/Users/nnxs/Library/Application Support/typora-user-images/image-20230513151247277.png)
+![image-20230513151247277](./leetcode/image-20230513151247277.png)
 
-![image-20230513151533771](/Users/nnxs/Library/Application Support/typora-user-images/image-20230513151533771.png)
+![image-20230513151533771](./leetcode/image-20230513151533771.png)
 
 - ##### 76
 
-![image-20230513151639594](/Users/nnxs/Library/Application Support/typora-user-images/image-20230513151639594.png)
+![image-20230513151639594](./leetcode/image-20230513151639594.png)
 
 ```c++
 #include<unordered_map>
@@ -276,15 +276,15 @@ public:
 
 - ##### 59
 
-![image-20230513152538348](/Users/nnxs/Library/Application Support/typora-user-images/image-20230513152538348.png)
+![image-20230513152538348](./leetcode/image-20230513152538348.png)
 
-![image-20230513152746447](/Users/nnxs/Library/Application Support/typora-user-images/image-20230513152746447.png)
+![image-20230513152746447](./leetcode/image-20230513152746447.png)
 
 - ##### 54
 
-![image-20230513154454266](/Users/nnxs/Library/Application Support/typora-user-images/image-20230513154454266.png)
+![image-20230513154454266](./leetcode/image-20230513154454266.png)
 
-![image-20230513154547032](/Users/nnxs/Library/Application Support/typora-user-images/image-20230513154547032.png)
+![image-20230513154547032](./leetcode/image-20230513154547032.png)
 
 ---
 
@@ -294,29 +294,29 @@ public:
 
 - ##### 203
 
-![image-20230514104600552](/Users/nnxs/Library/Application Support/typora-user-images/image-20230514104600552.png)
+![image-20230514104600552](./leetcode/image-20230514104600552.png)
 
-![image-20230514104657107](/Users/nnxs/Library/Application Support/typora-user-images/image-20230514104657107.png)
+![image-20230514104657107](./leetcode/image-20230514104657107.png)
 
 ### 3.2 反转链表（206）
 
 - ##### 206
 
-![image-20230514104934662](/Users/nnxs/Library/Application Support/typora-user-images/image-20230514104934662.png)
+![image-20230514104934662](./leetcode/image-20230514104934662.png)
 
-![image-20230514104950329](/Users/nnxs/Library/Application Support/typora-user-images/image-20230514104950329.png)
+![image-20230514104950329](./leetcode/image-20230514104950329.png)
 
-![image-20230514110810267](/Users/nnxs/Library/Application Support/typora-user-images/image-20230514110810267.png)
+![image-20230514110810267](./leetcode/image-20230514110810267.png)
 
-![image-20230514110831057](/Users/nnxs/Library/Application Support/typora-user-images/image-20230514110831057.png)
+![image-20230514110831057](./leetcode/image-20230514110831057.png)
 
 ### 3.3 两两交换链表中的节点（24）
 
 - ##### 24
 
-![image-20230514114210847](/Users/nnxs/Library/Application Support/typora-user-images/image-20230514114210847.png)
+![image-20230514114210847](./leetcode/image-20230514114210847.png)
 
-![image-20230514114744376](/Users/nnxs/Library/Application Support/typora-user-images/image-20230514114744376.png)
+![image-20230514114744376](./leetcode/image-20230514114744376.png)
 
 ---
 
@@ -340,79 +340,79 @@ public:
 
 - ##### 242
 
-![image-20230519223647495](/Users/nnxs/Library/Application Support/typora-user-images/image-20230519223647495.png)
+![image-20230519223647495](./leetcode/image-20230519223647495.png)
 
-![image-20230519223704030](/Users/nnxs/Library/Application Support/typora-user-images/image-20230519223704030.png)
+![image-20230519223704030](./leetcode/image-20230519223704030.png)
 
 - ##### 383
 
-![image-20230519224056808](/Users/nnxs/Library/Application Support/typora-user-images/image-20230519224056808.png)
+![image-20230519224056808](./leetcode/image-20230519224056808.png)
 
-![image-20230519224734455](/Users/nnxs/Library/Application Support/typora-user-images/image-20230519224734455.png)
+![image-20230519224734455](./leetcode/image-20230519224734455.png)
 
 - ##### 49
 
-![image-20230519230915090](/Users/nnxs/Library/Application Support/typora-user-images/image-20230519230915090.png)
+![image-20230519230915090](./leetcode/image-20230519230915090.png)
 
-![image-20230519231017556](/Users/nnxs/Library/Application Support/typora-user-images/image-20230519231017556.png)
+![image-20230519231017556](./leetcode/image-20230519231017556.png)
 
-![image-20230519231122937](/Users/nnxs/Library/Application Support/typora-user-images/image-20230519231122937.png)
+![image-20230519231122937](./leetcode/image-20230519231122937.png)
 
 - ##### 438
 
-![image-20230520094554424](/Users/nnxs/Library/Application Support/typora-user-images/image-20230520094554424.png)
+![image-20230520094554424](./leetcode/image-20230520094554424.png)
 
-![image-20230520094721867](/Users/nnxs/Library/Application Support/typora-user-images/image-20230520094721867.png)
+![image-20230520094721867](./leetcode/image-20230520094721867.png)
 
 ### 4.3 两个数组的交集（349、350）
 
 - ##### 349
 
-<img src="/Users/nnxs/Library/Application Support/typora-user-images/image-20230522105013601.png" alt="image-20230522105013601" style="zoom:100%;" />
+<img src="./leetcode/image-20230522105013601.png" alt="image-20230522105013601" style="zoom:100%;" />
 
-![image-20230522105138464](/Users/nnxs/Library/Application Support/typora-user-images/image-20230522105138464.png)
+![image-20230522105138464](./leetcode/image-20230522105138464.png)
 
-![image-20230522105243344](/Users/nnxs/Library/Application Support/typora-user-images/image-20230522105243344.png)
+![image-20230522105243344](./leetcode/image-20230522105243344.png)
 
-![image-20230522110930289](/Users/nnxs/Library/Application Support/typora-user-images/image-20230522110930289.png)
+![image-20230522110930289](./leetcode/image-20230522110930289.png)
 
 - ##### 350
 
-![image-20230522110222094](/Users/nnxs/Library/Application Support/typora-user-images/image-20230522110222094.png)
+![image-20230522110222094](./leetcode/image-20230522110222094.png)
 
-![image-20230522110334485](/Users/nnxs/Library/Application Support/typora-user-images/image-20230522110334485.png)
+![image-20230522110334485](./leetcode/image-20230522110334485.png)
 
-![image-20230522110414622](/Users/nnxs/Library/Application Support/typora-user-images/image-20230522110414622.png)
+![image-20230522110414622](./leetcode/image-20230522110414622.png)
 
 ### 4.4 快乐数（202）
 
 - ##### 202
 
-![image-20230522112004616](/Users/nnxs/Library/Application Support/typora-user-images/image-20230522112004616.png)
+![image-20230522112004616](./leetcode/image-20230522112004616.png)
 
-![image-20230522112142344](/Users/nnxs/Library/Application Support/typora-user-images/image-20230522112142344.png)
+![image-20230522112142344](./leetcode/image-20230522112142344.png)
 
 ### 4.5 两数之和（1——梦开始的地方）
 
 - ##### 1
 
-![image-20230522112436398](/Users/nnxs/Library/Application Support/typora-user-images/image-20230522112436398.png)
+![image-20230522112436398](./leetcode/image-20230522112436398.png)
 
-![image-20230522155902756](/Users/nnxs/Library/Application Support/typora-user-images/image-20230522155902756.png)
+![image-20230522155902756](./leetcode/image-20230522155902756.png)
 
 ### 4.6 四数之和（454）
 
 - ##### 454
 
-![image-20230523195503439](/Users/nnxs/Library/Application Support/typora-user-images/image-20230523195503439.png)
+![image-20230523195503439](./leetcode/image-20230523195503439.png)
 
-![image-20230523195948384](/Users/nnxs/Library/Application Support/typora-user-images/image-20230523195948384.png)
+![image-20230523195948384](./leetcode/image-20230523195948384.png)
 
 ### 4.7 三数之和（15——非哈希表解法，哈希表很难写）
 
 - ##### 15（双指针法）
 
-![image-20230523200513959](/Users/nnxs/Library/Application Support/typora-user-images/image-20230523200513959.png)
+![image-20230523200513959](./leetcode/image-20230523200513959.png)
 
 ```c++
 class Solution {
@@ -451,15 +451,15 @@ public:
 
 - ##### 611（番外篇，求三角形个数）
 
-![image-20240319174152438](/Users/nnxs/Library/Application Support/typora-user-images/image-20240319174152438.png)
+![image-20240319174152438](./leetcode/image-20240319174152438.png)
 
-![image-20240319174552474](/Users/nnxs/Library/Application Support/typora-user-images/image-20240319174552474.png)
+![image-20240319174552474](./leetcode/image-20240319174552474.png)
 
 ### 4.8 四数之和（18——非哈希表解法，哈希表很难写）
 
 - ##### 18（双指针法）
 
-![image-20230526105651681](/Users/nnxs/Library/Application Support/typora-user-images/image-20230526105651681.png)
+![image-20230526105651681](./leetcode/image-20230526105651681.png)
 
 ```c++
 class Solution {
@@ -504,51 +504,51 @@ public:
 
 - ##### 344
 
-![image-20230526111053173](/Users/nnxs/Library/Application Support/typora-user-images/image-20230526111053173.png)
+![image-20230526111053173](./leetcode/image-20230526111053173.png)
 
-![image-20230526111538886](/Users/nnxs/Library/Application Support/typora-user-images/image-20230526111538886.png)
+![image-20230526111538886](./leetcode/image-20230526111538886.png)
 
 ### 5.2 反转字符串2⃣️（541）
 
 - ##### 541
 
-![image-20230526114246421](/Users/nnxs/Library/Application Support/typora-user-images/image-20230526114246421.png)
+![image-20230526114246421](./leetcode/image-20230526114246421.png)
 
-![image-20230526114301238](/Users/nnxs/Library/Application Support/typora-user-images/image-20230526114301238.png)
+![image-20230526114301238](./leetcode/image-20230526114301238.png)
 
 ### 5.3 替换空格（剑指offer.05）
 
 - ##### 剑指offer.05
 
-![image-20230529125628744](/Users/nnxs/Library/Application Support/typora-user-images/image-20230529125628744.png)
+![image-20230529125628744](./leetcode/image-20230529125628744.png)
 
-![image-20230529131020873](/Users/nnxs/Library/Application Support/typora-user-images/image-20230529131020873.png)
+![image-20230529131020873](./leetcode/image-20230529131020873.png)
 
 ### 5.4 反转字符串中的单词（151）
 
 - ##### 151
 
-![image-20230529131716861](/Users/nnxs/Library/Application Support/typora-user-images/image-20230529131716861.png)
+![image-20230529131716861](./leetcode/image-20230529131716861.png)
 
-![image-20230529141240721](/Users/nnxs/Library/Application Support/typora-user-images/image-20230529141240721.png)
+![image-20230529141240721](./leetcode/image-20230529141240721.png)
 
 ### 5.5 左旋转字符串（剑指Offer58-Ⅱ）
 
 - ##### 剑指Offer58-Ⅱ
 
-![image-20230531094846356](/Users/nnxs/Library/Application Support/typora-user-images/image-20230531094846356.png)
+![image-20230531094846356](./leetcode/image-20230531094846356.png)
 
-![image-20230531095414220](/Users/nnxs/Library/Application Support/typora-user-images/image-20230531095414220.png)
+![image-20230531095414220](./leetcode/image-20230531095414220.png)
 
 ### 5.6 找出字符串第一个匹配项的下标（28）
 
 - ##### 28
 
-![image-20230531095551600](/Users/nnxs/Library/Application Support/typora-user-images/image-20230531095551600.png)
+![image-20230531095551600](./leetcode/image-20230531095551600.png)
 
-![image-20230531111735453](/Users/nnxs/Library/Application Support/typora-user-images/image-20230531111735453.png)
+![image-20230531111735453](./leetcode/image-20230531111735453.png)
 
-
+https://www.bilibili.com/video/BV1AY4y157yL/?spm_id_from=333.337.search-card.all.click&vd_source=6f0df852abe327699994b0b1bc03296d
 
 # 6、动态规划（dp）
 
@@ -556,59 +556,59 @@ public:
 
 ![img](https://code-thinking.cdn.bcebos.com/pics/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92-%E6%80%BB%E7%BB%93%E5%A4%A7%E7%BA%B21.jpg)
 
-![image-20230517104549597](/Users/nnxs/Library/Application Support/typora-user-images/image-20230517104549597.png)
+![image-20230517104549597](./leetcode/image-20230517104549597.png)
 
 ### 6.2 斐波那契数（509）
 
 - ##### 509
 
-![image-20230517103206107](/Users/nnxs/Library/Application Support/typora-user-images/image-20230517103206107.png)
+![image-20230517103206107](./leetcode/image-20230517103206107.png)
 
-![image-20230517103219309](/Users/nnxs/Library/Application Support/typora-user-images/image-20230517103219309.png)
+![image-20230517103219309](./leetcode/image-20230517103219309.png)
 
 ### 6.3 爬楼梯（70）
 
 - ##### 70
 
-![image-20230517103407189](/Users/nnxs/Library/Application Support/typora-user-images/image-20230517103407189.png)
+![image-20230517103407189](./leetcode/image-20230517103407189.png)
 
-![image-20230519224857262](/Users/nnxs/Library/Application Support/typora-user-images/image-20230519224857262.png)
+![image-20230519224857262](./leetcode/image-20230519224857262.png)
 
 ### 6.4 使用最小花费爬楼梯（746）
 
 - ##### 746
 
-![image-20230517112225092](/Users/nnxs/Library/Application Support/typora-user-images/image-20230517112225092.png)
+![image-20230517112225092](./leetcode/image-20230517112225092.png)
 
-![image-20230517142552146](/Users/nnxs/Library/Application Support/typora-user-images/image-20230517142552146.png)
+![image-20230517142552146](./leetcode/image-20230517142552146.png)
 
 ### 6.5 不同路径（62、63）
 
 - ##### 62
 
-![image-20230517143324435](/Users/nnxs/Library/Application Support/typora-user-images/image-20230517143324435.png)
+![image-20230517143324435](./leetcode/image-20230517143324435.png)
 
-![image-20230517143329743](/Users/nnxs/Library/Application Support/typora-user-images/image-20230517143329743.png)
+![image-20230517143329743](./leetcode/image-20230517143329743.png)
 
-![image-20230517152908859](/Users/nnxs/Library/Application Support/typora-user-images/image-20230517152908859.png)
+![image-20230517152908859](./leetcode/image-20230517152908859.png)
 
 - ##### 63
 
-![image-20230517153222047](/Users/nnxs/Library/Application Support/typora-user-images/image-20230517153222047.png)
+![image-20230517153222047](./leetcode/image-20230517153222047.png)
 
-![image-20230517153227920](/Users/nnxs/Library/Application Support/typora-user-images/image-20230517153227920.png)
+![image-20230517153227920](./leetcode/image-20230517153227920.png)
 
-![image-20230517153241992](/Users/nnxs/Library/Application Support/typora-user-images/image-20230517153241992.png)
+![image-20230517153241992](./leetcode/image-20230517153241992.png)
 
-![image-20230517155049283](/Users/nnxs/Library/Application Support/typora-user-images/image-20230517155049283.png)
+![image-20230517155049283](./leetcode/image-20230517155049283.png)
 
 ### 6.6 整数拆分（343）
 
 - ##### 343
 
-![image-20230517155757141](/Users/nnxs/Library/Application Support/typora-user-images/image-20230517155757141.png)
+![image-20230517155757141](./leetcode/image-20230517155757141.png)
 
-![image-20230517163233157](/Users/nnxs/Library/Application Support/typora-user-images/image-20230517163233157.png)
+![image-20230517163233157](./leetcode/image-20230517163233157.png)
 
 补充：dp[6]的24拆分，为什么不dp[2]dp[4]，因为dp[2]会拆成11，已经在1dp[5]考虑过了；同理dp[3]dp[3]，前面的dp[3]已经在2dp[4]考虑过了，因为3会拆成12和21，就算拆成111也在1dp[5]考虑过了
 
@@ -667,9 +667,9 @@ int main() {
 - 初始化：全0即可
 - 遍历顺序：先物品后重量（重量倒序遍历）❗️❗️
 
-![image-20230518002300437](/Users/nnxs/Library/Application Support/typora-user-images/image-20230518002300437.png)
+![image-20230518002300437](./leetcode/image-20230518002300437.png)
 
-![image-20230518002513143](/Users/nnxs/Library/Application Support/typora-user-images/image-20230518002513143.png)
+![image-20230518002513143](./leetcode/image-20230518002513143.png)
 
 ```c++
 void test_1_wei_bag_problem() {
@@ -694,29 +694,29 @@ int main() {
 
 - ##### 416（01背包是否能装满，装满True）
 
-![image-20230518003435485](/Users/nnxs/Library/Application Support/typora-user-images/image-20230518003435485.png)
+![image-20230518003435485](./leetcode/image-20230518003435485.png)
 
-![image-20230518005102371](/Users/nnxs/Library/Application Support/typora-user-images/image-20230518005102371.png)
+![image-20230518005102371](./leetcode/image-20230518005102371.png)
 
 - ##### 1049（dp含义同上，本题其实就是尽量让石头分成重量相同的两堆，相撞之后剩下的石头最小，**这样就化解成01背包问题了**）
 
-![image-20240229201502074](/Users/nnxs/Library/Application Support/typora-user-images/image-20240229201502074.png)
+![image-20240229201502074](./leetcode/image-20240229201502074.png)
 
-![image-20240229202435270](/Users/nnxs/Library/Application Support/typora-user-images/image-20240229202435270.png)
+![image-20240229202435270](./leetcode/image-20240229202435270.png)
 
 - ##### 494（01背包有多少种方式装满）
 
-![image-20240302140301948](/Users/nnxs/Library/Application Support/typora-user-images/image-20240302140301948.png)
+![image-20240302140301948](./leetcode/image-20240302140301948.png)
 
-![image-20240302143508149](/Users/nnxs/Library/Application Support/typora-user-images/image-20240302143508149.png)
+![image-20240302143508149](./leetcode/image-20240302143508149.png)
 
 假设所有取正数的为left，所有取负数的为right，left+right=sums，left-right=target，所以left=(sums+target)/2
 
 - ##### 474（01背包二维背包容量，最多能装多少个物品）
 
-![image-20240302143704366](/Users/nnxs/Library/Application Support/typora-user-images/image-20240302143704366.png)
+![image-20240302143704366](./leetcode/image-20240302143704366.png)
 
-![image-20240302143730994](/Users/nnxs/Library/Application Support/typora-user-images/image-20240302143730994.png)
+![image-20240302143730994](./leetcode/image-20240302143730994.png)
 
 ### 6.8 完全背包问题
 
@@ -731,53 +731,53 @@ for i in range(len(weight)):  # 遍历物品
 
 - ##### 52（[卡码网KamaCoder](https://kamacoder.com/)）
 
-![image-20240303110225109](/Users/nnxs/Library/Application Support/typora-user-images/image-20240303110225109.png)
+![image-20240303110225109](./leetcode/image-20240303110225109.png)
 
-![image-20240303110340408](/Users/nnxs/Library/Application Support/typora-user-images/image-20240303110340408.png)
+![image-20240303110340408](./leetcode/image-20240303110340408.png)
 
 - ##### 518（组合）
 
-![image-20240303112504595](/Users/nnxs/Library/Application Support/typora-user-images/image-20240303112504595.png)
+![image-20240303112504595](./leetcode/image-20240303112504595.png)
 
-![image-20240303112930524](/Users/nnxs/Library/Application Support/typora-user-images/image-20240303112930524.png)
+![image-20240303112930524](./leetcode/image-20240303112930524.png)
 
 - ##### 377（排列）
 
-![image-20240303114119329](/Users/nnxs/Library/Application Support/typora-user-images/image-20240303114119329.png)
+![image-20240303114119329](./leetcode/image-20240303114119329.png)
 
-![image-20240303114248075](/Users/nnxs/Library/Application Support/typora-user-images/image-20240303114248075.png)
+![image-20240303114248075](./leetcode/image-20240303114248075.png)
 
 - ##### 57（[卡码网KamaCoder](https://kamacoder.com/)）
 
-![image-20240305103519085](/Users/nnxs/Library/Application Support/typora-user-images/image-20240305103519085.png)
+![image-20240305103519085](./leetcode/image-20240305103519085.png)
 
-![image-20240305103536685](/Users/nnxs/Library/Application Support/typora-user-images/image-20240305103536685.png)
+![image-20240305103536685](./leetcode/image-20240305103536685.png)
 
 - ##### 322
 
-![image-20240305110433602](/Users/nnxs/Library/Application Support/typora-user-images/image-20240305110433602.png)
+![image-20240305110433602](./leetcode/image-20240305110433602.png)
 
-![image-20240307163535955](/Users/nnxs/Library/Application Support/typora-user-images/image-20240307163535955.png)
+![image-20240307163535955](./leetcode/image-20240307163535955.png)
 
 - ##### 279
 
-![image-20240307155428753](/Users/nnxs/Library/Application Support/typora-user-images/image-20240307155428753.png)
+![image-20240307155428753](./leetcode/image-20240307155428753.png)
 
-![image-20240307163642616](/Users/nnxs/Library/Application Support/typora-user-images/image-20240307163642616.png)
+![image-20240307163642616](./leetcode/image-20240307163642616.png)
 
 - ##### 139
 
-![image-20240309134947310](/Users/nnxs/Library/Application Support/typora-user-images/image-20240309134947310.png)
+![image-20240309134947310](./leetcode/image-20240309134947310.png)
 
-![image-20240309135345828](/Users/nnxs/Library/Application Support/typora-user-images/image-20240309135345828.png)
+![image-20240309135345828](./leetcode/image-20240309135345828.png)
 
 ### 6.9 多重背包问题（基本不会考，只一个例题，解法同01）
 
 - ##### 56（[卡码网KamaCoder](https://kamacoder.com/)）
 
-![image-20240309145549305](/Users/nnxs/Library/Application Support/typora-user-images/image-20240309145549305.png)
+![image-20240309145549305](./leetcode/image-20240309145549305.png)
 
-![image-20240309145948073](/Users/nnxs/Library/Application Support/typora-user-images/image-20240309145948073.png)
+![image-20240309145948073](./leetcode/image-20240309145948073.png)
 
 ### 6.10 背包问题总结
 
@@ -802,63 +802,63 @@ for i in range(len(weight)):  # 遍历物品
 
   - 01背包：一维dp数组01背包只能先遍历物品再遍历背包容量，且第二层for循环是**从大到小**遍历
   - 完全背包：
-    - **求组合数就是外层for循环遍历物品，内层for遍历背包**
-    - **求排列数就是外层for遍历背包，内层for循环遍历物品**
+    - **求组合数就是外层for循环遍历物品，内层for遍历背包容量（从小到大）**
+    - **求排列数就是外层for遍历背包容量（从小到大），内层for循环遍历物品**
     - 求最小数，那么两层for循环的先后顺序就无所谓
 
 ### 6.11 打家劫舍（Ⅰ、Ⅱ、Ⅲ）
 
 - ##### 198（Ⅰ）
 
-![image-20240309152252959](/Users/nnxs/Library/Application Support/typora-user-images/image-20240309152252959.png)
+![image-20240309152252959](./leetcode/image-20240309152252959.png)
 
-![image-20240309152528174](/Users/nnxs/Library/Application Support/typora-user-images/image-20240309152528174.png)
+![image-20240309152528174](./leetcode/image-20240309152528174.png)
 
 - ##### 213（Ⅱ）
 
-![image-20240309153118122](/Users/nnxs/Library/Application Support/typora-user-images/image-20240309153118122.png)
+![image-20240309153118122](./leetcode/image-20240309153118122.png)
 
-![image-20240309153514387](/Users/nnxs/Library/Application Support/typora-user-images/image-20240309153514387.png)
+![image-20240309153514387](./leetcode/image-20240309153514387.png)
 
 - ##### 337（Ⅲ）
 
-![image-20240310095021269](/Users/nnxs/Library/Application Support/typora-user-images/image-20240310095021269.png)
+![image-20240310095021269](./leetcode/image-20240310095021269.png)
 
-![image-20240310095124667](/Users/nnxs/Library/Application Support/typora-user-images/image-20240310095124667.png)
+![image-20240310095124667](./leetcode/image-20240310095124667.png)
 
 ### 6.12 买卖股票的最佳时机（121、122、123、188、309、714）
 
 - ##### 121
 
-![image-20230518153953393](/Users/nnxs/Library/Application Support/typora-user-images/image-20230518153953393.png)
+![image-20230518153953393](./leetcode/image-20230518153953393.png)
 
-![image-20230518154153172](/Users/nnxs/Library/Application Support/typora-user-images/image-20230518154153172.png)
+![image-20230518154153172](./leetcode/image-20230518154153172.png)
 
-![image-20230518155926403](/Users/nnxs/Library/Application Support/typora-user-images/image-20230518155926403.png)
+![image-20230518155926403](./leetcode/image-20230518155926403.png)
 
 - ##### 122
 
-![image-20230518160349069](/Users/nnxs/Library/Application Support/typora-user-images/image-20230518160349069.png)
+![image-20230518160349069](./leetcode/image-20230518160349069.png)
 
-![image-20230518161025840](/Users/nnxs/Library/Application Support/typora-user-images/image-20230518161025840.png)
+![image-20230518161025840](./leetcode/image-20230518161025840.png)
 
 - ##### 123
 
-![image-20230518162839742](/Users/nnxs/Library/Application Support/typora-user-images/image-20230518162839742.png)
+![image-20230518162839742](./leetcode/image-20230518162839742.png)
 
-![image-20230518163343983](/Users/nnxs/Library/Application Support/typora-user-images/image-20230518163343983.png)
+![image-20230518163343983](./leetcode/image-20230518163343983.png)
 
 - ##### 188
 
-![image-20240310101947493](/Users/nnxs/Library/Application Support/typora-user-images/image-20240310101947493.png)
+![image-20240310101947493](./leetcode/image-20240310101947493.png)
 
-![image-20240310102032883](/Users/nnxs/Library/Application Support/typora-user-images/image-20240310102032883.png)
+![image-20240310102032883](./leetcode/image-20240310102032883.png)
 
 - ##### 309
 
-![image-20240311192814366](/Users/nnxs/Library/Application Support/typora-user-images/image-20240311192814366.png)
+![image-20240311192814366](./leetcode/image-20240311192814366.png)
 
-![image-20240311195639174](/Users/nnxs/Library/Application Support/typora-user-images/image-20240311195639174.png)
+![image-20240311195639174](./leetcode/image-20240311195639174.png)
 
 解释：0状态为持有股票状态（买入或之前就买入一直持有），1状态为保持股票卖出状态（冷冻期后），2状态为卖出股票状态（卖出），3状态为冷冻期（卖出后第一天），其关系举例如下
 
@@ -877,9 +877,9 @@ for i in range(len(weight)):  # 遍历物品
 
 - ##### 714
 
-![image-20240314155055416](/Users/nnxs/Library/Application Support/typora-user-images/image-20240314155055416.png)
+![image-20240314155055416](./leetcode/image-20240314155055416.png)
 
-![image-20240314155241014](/Users/nnxs/Library/Application Support/typora-user-images/image-20240314155241014.png)
+![image-20240314155241014](./leetcode/image-20240314155241014.png)
 
 （最好还是卖出减手续费，比较好理解）
 
@@ -889,191 +889,191 @@ for i in range(len(weight)):  # 遍历物品
 
 - ##### 300（最长递增子序列）
 
-![image-20240315124148955](/Users/nnxs/Library/Application Support/typora-user-images/image-20240315124148955.png)
+![image-20240315124148955](./leetcode/image-20240315124148955.png)
 
-![image-20240315124259853](/Users/nnxs/Library/Application Support/typora-user-images/image-20240315124259853.png)
+![image-20240315124259853](./leetcode/image-20240315124259853.png)
 
 - ##### 674（最长连续递增序列）
 
-![image-20240315124711817](/Users/nnxs/Library/Application Support/typora-user-images/image-20240315124711817.png)
+![image-20240315124711817](./leetcode/image-20240315124711817.png)
 
-![image-20240315124743822](/Users/nnxs/Library/Application Support/typora-user-images/image-20240315124743822.png)
+![image-20240315124743822](./leetcode/image-20240315124743822.png)
 
 - ##### 718（最长重复子数组）
 
-![image-20240315124857164](/Users/nnxs/Library/Application Support/typora-user-images/image-20240315124857164.png)
+![image-20240315124857164](./leetcode/image-20240315124857164.png)
 
-![image-20240315131100830](/Users/nnxs/Library/Application Support/typora-user-images/image-20240315131100830.png)
+![image-20240315131100830](./leetcode/image-20240315131100830.png)
 
 - ##### 1143（最长公共子序列）
 
-![image-20240316130314556](/Users/nnxs/Library/Application Support/typora-user-images/image-20240316130314556.png)
+![image-20240316130314556](./leetcode/image-20240316130314556.png)
 
-![image-20240316135004560](/Users/nnxs/Library/Application Support/typora-user-images/image-20240316135004560.png)
+![image-20240316135004560](./leetcode/image-20240316135004560.png)
 
 至于此处为什么是`dp[i][j] = max(dp[i-1][j], dp[i][j-1])`，我理解的是如果`text1[i-1] == text2[j-1]`，相等时用到了这两个位置上的字母，所以取的是`dp[i][[j] = dp[i-1][j-1] + 1`；如果不相等，则没有用到这两个位置的字母，那么递推公式取max时就可以用到这两个位置保存的信息，相当于用到了这两个位置的字母
 
 - ##### 1035（不相交的线）
 
-![image-20240317205620536](/Users/nnxs/Library/Application Support/typora-user-images/image-20240317205620536.png)
+![image-20240317205620536](./leetcode/image-20240317205620536.png)
 
-![image-20240317211955261](/Users/nnxs/Library/Application Support/typora-user-images/image-20240317211955261.png)
+![image-20240317211955261](./leetcode/image-20240317211955261.png)
 
 - ##### 53
 
-![image-20240318101556262](/Users/nnxs/Library/Application Support/typora-user-images/image-20240318101556262.png)
+![image-20240318101556262](./leetcode/image-20240318101556262.png)
 
-![image-20240318101753419](/Users/nnxs/Library/Application Support/typora-user-images/image-20240318101753419.png)
+![image-20240318101753419](./leetcode/image-20240318101753419.png)
 
 - ##### 392（判断子序列）
 
-![image-20240318102259989](/Users/nnxs/Library/Application Support/typora-user-images/image-20240318102259989.png)
+![image-20240318102259989](./leetcode/image-20240318102259989.png)
 
-![image-20240318104041178](/Users/nnxs/Library/Application Support/typora-user-images/image-20240318104041178.png)
+![image-20240318104041178](./leetcode/image-20240318104041178.png)
 
 - ##### 115（不同的子序列）
 
-![image-20240318111059953](/Users/nnxs/Library/Application Support/typora-user-images/image-20240318111059953.png)
+![image-20240318111059953](./leetcode/image-20240318111059953.png)
 
-![image-20240318111903067](/Users/nnxs/Library/Application Support/typora-user-images/image-20240318111903067.png)
+![image-20240318111903067](./leetcode/image-20240318111903067.png)
 
 - ##### 583（两个字符串的删除操作）
 
-![image-20240318114507179](/Users/nnxs/Library/Application Support/typora-user-images/image-20240318114507179.png)
+![image-20240318114507179](./leetcode/image-20240318114507179.png)
 
-![image-20240318115845424](/Users/nnxs/Library/Application Support/typora-user-images/image-20240318115845424.png)
+![image-20240318115845424](./leetcode/image-20240318115845424.png)
 
 - ##### 72（编辑距离）
 
-![image-20240318140915981](/Users/nnxs/Library/Application Support/typora-user-images/image-20240318140915981.png)
+![image-20240318140915981](./leetcode/image-20240318140915981.png)
 
-![image-20240318141221214](/Users/nnxs/Library/Application Support/typora-user-images/image-20240318141221214.png)
+![image-20240318141221214](./leetcode/image-20240318141221214.png)
 
 - ##### 647
 
-![image-20240318142021819](/Users/nnxs/Library/Application Support/typora-user-images/image-20240318142021819.png)
+![image-20240318142021819](./leetcode/image-20240318142021819.png)
 
-![image-20240318145437505](/Users/nnxs/Library/Application Support/typora-user-images/image-20240318145437505.png)
+![image-20240318145437505](./leetcode/image-20240318145437505.png)
 
 - ##### 516
 
-![image-20240319163334146](/Users/nnxs/Library/Application Support/typora-user-images/image-20240319163334146.png)
+![image-20240319163334146](./leetcode/image-20240319163334146.png)
 
-![image-20240319165206892](/Users/nnxs/Library/Application Support/typora-user-images/image-20240319165206892.png)
+![image-20240319165206892](./leetcode/image-20240319165206892.png)
 
 # 七、贪心算法
 
 - ##### 455
 
-![image-20240321135307947](/Users/nnxs/Library/Application Support/typora-user-images/image-20240321135307947.png)
+![image-20240321135307947](./leetcode/image-20240321135307947.png)
 
-![image-20240321135408713](/Users/nnxs/Library/Application Support/typora-user-images/image-20240321135408713.png)
+![image-20240321135408713](./leetcode/image-20240321135408713.png)
 
 - ##### 376
 
-![image-20240321142923989](/Users/nnxs/Library/Application Support/typora-user-images/image-20240321142923989.png)
+![image-20240321142923989](./leetcode/image-20240321142923989.png)
 
-![image-20240321143043995](/Users/nnxs/Library/Application Support/typora-user-images/image-20240321143043995.png)
+![image-20240321143043995](./leetcode/image-20240321143043995.png)
 
 所有数一样的数组返回1，这是用例测试出来的
 
 - ##### 53
 
-![image-20240318101556262](/Users/nnxs/Library/Application Support/typora-user-images/image-20240318101556262.png)
+![image-20240318101556262](./leetcode/image-20240318101556262.png)
 
-![image-20240322115017681](/Users/nnxs/Library/Application Support/typora-user-images/image-20240322115017681.png)
+![image-20240322115017681](./leetcode/image-20240322115017681.png)
 
 - ##### 122
 
-![image-20230518160349069](/Users/nnxs/Library/Application Support/typora-user-images/image-20230518160349069.png)
+![image-20230518160349069](./leetcode/image-20230518160349069.png)
 
 - ##### 55
 
-![image-20240324162007816](/Users/nnxs/Library/Application Support/typora-user-images/image-20240324162007816.png)
+![image-20240324162007816](./leetcode/image-20240324162007816.png)
 
-![image-20240324162102533](/Users/nnxs/Library/Application Support/typora-user-images/image-20240324162102533.png)
+![image-20240324162102533](./leetcode/image-20240324162102533.png)
 
-![image-20240324162254898](/Users/nnxs/Library/Application Support/typora-user-images/image-20240324162254898.png)
+![image-20240324162254898](./leetcode/image-20240324162254898.png)
 
 - ##### 45
 
-![image-20240324162259468](/Users/nnxs/Library/Application Support/typora-user-images/image-20240324162259468.png)
+![image-20240324162259468](./leetcode/image-20240324162259468.png)
 
-![image-20240324164708737](/Users/nnxs/Library/Application Support/typora-user-images/image-20240324164708737.png)
+![image-20240324164708737](./leetcode/image-20240324164708737.png)
 
-![image-20240324165116085](/Users/nnxs/Library/Application Support/typora-user-images/image-20240324165116085.png)
+![image-20240324165116085](./leetcode/image-20240324165116085.png)
 
 - ##### 1005
 
-![image-20240324165617330](/Users/nnxs/Library/Application Support/typora-user-images/image-20240324165617330.png)
+![image-20240324165617330](./leetcode/image-20240324165617330.png)
 
-![image-20240324172004840](/Users/nnxs/Library/Application Support/typora-user-images/image-20240324172004840.png)
+![image-20240324172004840](./leetcode/image-20240324172004840.png)
 
-![image-20240324172134390](/Users/nnxs/Library/Application Support/typora-user-images/image-20240324172134390.png)
+![image-20240324172134390](./leetcode/image-20240324172134390.png)
 
 - ##### 134
 
-![image-20240326102029784](/Users/nnxs/Library/Application Support/typora-user-images/image-20240326102029784.png)
+![image-20240326102029784](./leetcode/image-20240326102029784.png)
 
-![image-20240326104541088](/Users/nnxs/Library/Application Support/typora-user-images/image-20240326104541088.png)
+![image-20240326104541088](./leetcode/image-20240326104541088.png)
 
 - ##### 135（双维度切忌同时考虑，顾此失彼）
 
-![image-20240326104945207](/Users/nnxs/Library/Application Support/typora-user-images/image-20240326104945207.png)
+![image-20240326104945207](./leetcode/image-20240326104945207.png)
 
-![image-20240326140656788](/Users/nnxs/Library/Application Support/typora-user-images/image-20240326140656788.png)
+![image-20240326140656788](./leetcode/image-20240326140656788.png)
 
 同时考虑两边会顾此失彼，自己做的时候是同时考虑的，一上午总是会有特列报错，还是要分开考虑
 
 - ##### 860
 
-![image-20240326141753119](/Users/nnxs/Library/Application Support/typora-user-images/image-20240326141753119.png)
+![image-20240326141753119](./leetcode/image-20240326141753119.png)
 
-![image-20240326141834825](/Users/nnxs/Library/Application Support/typora-user-images/image-20240326141834825.png)
+![image-20240326141834825](./leetcode/image-20240326141834825.png)
 
 - ##### 406（双维度切忌同时考虑，顾此失彼）
 
-![image-20240326142039821](/Users/nnxs/Library/Application Support/typora-user-images/image-20240326142039821.png)
+![image-20240326142039821](./leetcode/image-20240326142039821.png)
 
-![image-20240326144349392](/Users/nnxs/Library/Application Support/typora-user-images/image-20240326144349392.png)
+![image-20240326144349392](./leetcode/image-20240326144349392.png)
 
 - ##### 452（区间题）
 
-![image-20240327093021836](/Users/nnxs/Library/Application Support/typora-user-images/image-20240327093021836.png)
+![image-20240327093021836](./leetcode/image-20240327093021836.png)
 
-![image-20240327100244536](/Users/nnxs/Library/Application Support/typora-user-images/image-20240327100244536.png)
+![image-20240327100244536](./leetcode/image-20240327100244536.png)
 
 - ##### 435（思路同上题）
 
-![image-20240327100617819](/Users/nnxs/Library/Application Support/typora-user-images/image-20240327100617819.png)
+![image-20240327100617819](./leetcode/image-20240327100617819.png)
 
-![image-20240327101620429](/Users/nnxs/Library/Application Support/typora-user-images/image-20240327101620429.png)
+![image-20240327101620429](./leetcode/image-20240327101620429.png)
 
 - ##### 763
 
-![image-20240327101737527](/Users/nnxs/Library/Application Support/typora-user-images/image-20240327101737527.png)
+![image-20240327101737527](./leetcode/image-20240327101737527.png)
 
-![image-20240327105446151](/Users/nnxs/Library/Application Support/typora-user-images/image-20240327105446151.png)
+![image-20240327105446151](./leetcode/image-20240327105446151.png)
 
-![image-20240327105636510](/Users/nnxs/Library/Application Support/typora-user-images/image-20240327105636510.png)
+![image-20240327105636510](./leetcode/image-20240327105636510.png)
 
 - ##### 56
 
-![image-20240327111018000](/Users/nnxs/Library/Application Support/typora-user-images/image-20240327111018000.png)
+![image-20240327111018000](./leetcode/image-20240327111018000.png)
 
-![image-20240327111713472](/Users/nnxs/Library/Application Support/typora-user-images/image-20240327111713472.png)
+![image-20240327111713472](./leetcode/image-20240327111713472.png)
 
 - ##### 738
 
-![image-20240327114259606](/Users/nnxs/Library/Application Support/typora-user-images/image-20240327114259606.png)
+![image-20240327114259606](./leetcode/image-20240327114259606.png)
 
-![image-20240327125840479](/Users/nnxs/Library/Application Support/typora-user-images/image-20240327125840479.png)
+![image-20240327125840479](./leetcode/image-20240327125840479.png)
 
 - ##### 968
 
-![image-20240327130042405](/Users/nnxs/Library/Application Support/typora-user-images/image-20240327130042405.png)
+![image-20240327130042405](./leetcode/image-20240327130042405.png)
 
-![image-20240327134229773](/Users/nnxs/Library/Application Support/typora-user-images/image-20240327134229773.png)
+![image-20240327134229773](./leetcode/image-20240327134229773.png)
 
 # 八、回溯
 
@@ -1081,114 +1081,158 @@ for i in range(len(weight)):  # 遍历物品
 
 - ##### 77
 
-![image-20240328133659932](/Users/nnxs/Library/Application Support/typora-user-images/image-20240328133659932.png)
+![image-20240328133659932](./leetcode/image-20240328133659932.png)
 
-![image-20240328134947088](/Users/nnxs/Library/Application Support/typora-user-images/image-20240328134947088.png)
+![image-20240328134947088](./leetcode/image-20240328134947088.png)
 
 - ##### 216
 
-![image-20240328135303705](/Users/nnxs/Library/Application Support/typora-user-images/image-20240328135303705.png)
+![image-20240328135303705](./leetcode/image-20240328135303705.png)
 
-![image-20240328142525345](/Users/nnxs/Library/Application Support/typora-user-images/image-20240328142525345.png)
+![image-20240328142525345](./leetcode/image-20240328142525345.png)
 
 - ##### 17
 
-![image-20240328150442341](/Users/nnxs/Library/Application Support/typora-user-images/image-20240328150442341.png)
+![image-20240328150442341](./leetcode/image-20240328150442341.png)
 
-![image-20240328150401878](/Users/nnxs/Library/Application Support/typora-user-images/image-20240328150401878.png)
+![image-20240328150401878](./leetcode/image-20240328150401878.png)
 
 最好是字母写个映射列表，代码不用这么长
 
 - ##### 39
 
-![image-20240329101055730](/Users/nnxs/Library/Application Support/typora-user-images/image-20240329101055730.png)
+![image-20240329101055730](./leetcode/image-20240329101055730.png)
 
-![image-20240329102831480](/Users/nnxs/Library/Application Support/typora-user-images/image-20240329102831480.png)
+![image-20240329102831480](./leetcode/image-20240329102831480.png)
 
 - ##### 40
 
-![image-20240329102943940](/Users/nnxs/Library/Application Support/typora-user-images/image-20240329102943940.png)
+![image-20240329102943940](./leetcode/image-20240329102943940.png)
 
-![image-20240329105708929](/Users/nnxs/Library/Application Support/typora-user-images/image-20240329105708929.png)
+![image-20240329105708929](./leetcode/image-20240329105708929.png)
 
 ### 8.2 分割（131、93）
 
 - ##### 131
 
-![image-20240331141227853](/Users/nnxs/Library/Application Support/typora-user-images/image-20240331141227853.png)
+![image-20240331141227853](./leetcode/image-20240331141227853.png)
 
-![image-20240331143521793](/Users/nnxs/Library/Application Support/typora-user-images/image-20240331143521793.png)
+![image-20240331143521793](./leetcode/image-20240331143521793.png)
 
 - ##### 93
 
-![image-20240331143846659](/Users/nnxs/Library/Application Support/typora-user-images/image-20240331143846659.png)
+![image-20240331143846659](./leetcode/image-20240331143846659.png)
 
-![image-20240331151132121](/Users/nnxs/Library/Application Support/typora-user-images/image-20240331151132121.png)
+![image-20240331151132121](./leetcode/image-20240331151132121.png)
 
 ### 8.3 子集（78、90、491（很类似子集问题））
 
 - ##### 78
 
-![image-20240331171753885](/Users/nnxs/Library/Application Support/typora-user-images/image-20240331171753885.png)
+![image-20240331171753885](./leetcode/image-20240331171753885.png)
 
-![image-20240331173543904](/Users/nnxs/Library/Application Support/typora-user-images/image-20240331173543904.png)
+![image-20240331173543904](./leetcode/image-20240331173543904.png)
 
 - ##### 90
 
-![image-20240331174357558](/Users/nnxs/Library/Application Support/typora-user-images/image-20240331174357558.png)
+![image-20240331174357558](./leetcode/image-20240331174357558.png)
 
-![image-20240331174413301](/Users/nnxs/Library/Application Support/typora-user-images/image-20240331174413301.png)
+![image-20240331174413301](./leetcode/image-20240331174413301.png)
 
 used思路同40题
 
 - ##### 491
 
-![image-20240331174618056](/Users/nnxs/Library/Application Support/typora-user-images/image-20240331174618056.png)
+![image-20240331174618056](./leetcode/image-20240331174618056.png)
 
-![image-20240331175727933](/Users/nnxs/Library/Application Support/typora-user-images/image-20240331175727933.png)
+![image-20240331175727933](./leetcode/image-20240331175727933.png)
 
-![image-20240331180613594](/Users/nnxs/Library/Application Support/typora-user-images/image-20240331180613594.png)
+![image-20240331180613594](./leetcode/image-20240331180613594.png)
 
 ### 8.4 排列（46、47）
 
 - ##### 46
 
-![image-20240331181401914](/Users/nnxs/Library/Application Support/typora-user-images/image-20240331181401914.png)
+![image-20240331181401914](./leetcode/image-20240331181401914.png)
 
-![image-20240331201052310](/Users/nnxs/Library/Application Support/typora-user-images/image-20240331201052310.png)
+![image-20240331201052310](./leetcode/image-20240331201052310.png)
 
 - ##### 47
 
-![image-20240331201116098](/Users/nnxs/Library/Application Support/typora-user-images/image-20240331201116098.png)
+![image-20240331201116098](./leetcode/image-20240331201116098.png)
 
-![image-20240331202446382](/Users/nnxs/Library/Application Support/typora-user-images/image-20240331202446382.png)
+![image-20240331202446382](./leetcode/image-20240331202446382.png)
 
 ### 8.5 棋盘（51、37）
 
 - ##### 51
 
-![image-20240402131001857](/Users/nnxs/Library/Application Support/typora-user-images/image-20240402131001857.png)
+![image-20240402131001857](./leetcode/image-20240402131001857.png)
 
-![image-20240402143625548](/Users/nnxs/Library/Application Support/typora-user-images/image-20240402143625548.png)
+![image-20240402143625548](./leetcode/image-20240402143625548.png)
 
 每一行代表一层，只需要判断列、45、135是否违规
 
 - ##### 37
 
-![image-20240403104411436](/Users/nnxs/Library/Application Support/typora-user-images/image-20240403104411436.png)
+![image-20240403104411436](./leetcode/image-20240403104411436.png)
 
-![image-20240403113216269](/Users/nnxs/Library/Application Support/typora-user-images/image-20240403113216269.png)
+![image-20240403113216269](./leetcode/image-20240403113216269.png)
 
 ### 8.6 其他（332）
 
 - ##### 332
 
-![image-20240401135844661](/Users/nnxs/Library/Application Support/typora-user-images/image-20240401135844661.png)
+![image-20240401135844661](./leetcode/image-20240401135844661.png)
 
 直接按常理写超时！！
 
-![image-20240401184146440](/Users/nnxs/Library/Application Support/typora-user-images/image-20240401184146440.png)
+![image-20240401184146440](./leetcode/image-20240401184146440.png)
 
 要用字典逆序解决才不会超时
 
-![image-20240401184642968](/Users/nnxs/Library/Application Support/typora-user-images/image-20240401184642968.png)
+![image-20240401184642968](./leetcode/image-20240401184642968.png)
+
+# 九、图论
+
+### 9.1 DFS基础
+
+- ##### 797
+
+![image-20240405152813334](./leetcode/image-20240405152813334.png)
+
+![image-20240405153549840](./leetcode/image-20240405153549840.png)
+
+- ##### 200
+
+![image-20240407141450662](./leetcode/image-20240407141450662.png)
+
+![image-20240407143540418](./leetcode/image-20240407143540418.png)
+
+### 9.2 BFS基础
+
+- ##### 200
+
+![image-20240407145258887](./leetcode/image-20240407145258887.png)
+
+入队就标记，而不是出队再标记，否则超时
+
+### 9.3 其他题目（）
+
+- ##### 695（可dfs/bfs，下面答案为bfs）
+
+![image-20240407150914421](./leetcode/image-20240407150914421.png)
+
+![image-20240407150811831](./leetcode/image-20240407150811831.png)
+
+- ##### 1020
+
+![image-20240408183643319](./leetcode/image-20240408183643319.png)
+
+![image-20240408191634261](./leetcode/image-20240408191634261.png)
+
+- ##### 130
+
+![image-20240409145756751](./leetcode/image-20240409145756751.png)
+
+![image-20240409145935504](./leetcode/image-20240409145935504.png)

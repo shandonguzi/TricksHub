@@ -1230,7 +1230,7 @@ used思路同40题
 
 入队就标记，而不是出队再标记，否则超时
 
-### 9.3 其他题目（）
+### 9.3 其他题目（卡玛网）
 
 - ##### 695（可dfs/bfs，下面答案为bfs）
 
@@ -1244,8 +1244,95 @@ used思路同40题
 
 ![image-20240408191634261](./leetcode/image-20240408191634261.png)
 
+```python
+# 卡玛网ACM
+def bfs(matrix, i, j, n, m, visited, direction):
+    visited[i][j] = 1
+    queue = []
+    queue.append((i, j))
+    while len(queue) != 0:
+        x, y = queue.pop(0)
+        for k in range(4):
+            new_x, new_y = x + direction[k][0], y + direction[k][1]
+            if new_x < 0 or new_x >= n or new_y < 0 or new_y >= m or visited[new_x][new_y] == 1 or matrix[new_x][new_y] == 0:
+                continue
+            visited[new_x][new_y] = 1
+            queue.append((new_x, new_y))
+
+if __name__ == '__main__':
+    n, m = map(int, input().split())
+    matrix, visited = [], [[0] * m for _ in range(n)]
+    direction = [[1, 0], [-1, 0], [0, 1], [0, -1]]
+    ans = 0
+    for i in range(n):
+        matrix.append(list(map(int, input().split())))
+    # 上下左右环形先处理掉
+    for i in range(n):
+        if matrix[i][0] == 1 and visited[i][0] == 0:
+            bfs(matrix, i, 0, n, m, visited, direction)
+        if matrix[i][m-1] == 1 and visited[i][m-1] == 0:
+            bfs(matrix, i, m-1, n, m, visited, direction)
+    for j in range(m):
+        if matrix[0][j] == 1 and visited[0][j] == 0:
+            bfs(matrix, 0, j, n, m, visited, direction)
+        if matrix[n-1][j] == 1 and visited[n-1][j] == 0:
+            bfs(matrix, n-1, j, n, m, visited, direction)
+    # 其他位置为1则是孤岛
+    for i in range(n):
+        for j in range(m):
+            if matrix[i][j] == 1 and visited[i][j] == 0:
+                ans += 1
+    print(ans)
+```
+
 - ##### 130
 
 ![image-20240409145756751](./leetcode/image-20240409145756751.png)
 
 ![image-20240409145935504](./leetcode/image-20240409145935504.png)
+
+```python
+# 卡玛网ACM
+def bfs(matrix, i, j, n, m, visited, direction):
+    visited[i][j] = 1
+    queue = []
+    queue.append((i, j))
+    matrix[i][j] = 2
+    while len(queue) != 0:
+        x, y = queue.pop(0)
+        for k in range(4):
+            new_x, new_y = x + direction[k][0], y + direction[k][1]
+            if new_x < 0 or new_x >= n or new_y < 0 or new_y >= m or visited[new_x][new_y] == 1 or matrix[new_x][new_y] == 0:
+                continue
+            visited[new_x][new_y] = 1
+            matrix[new_x][new_y] = 2
+            queue.append((new_x, new_y))
+
+if __name__ == '__main__':
+    n, m = map(int, input().split())
+    matrix, visited = [], [[0] * m for _ in range(n)]
+    direction = [[1, 0], [-1, 0], [0, 1], [0, -1]]
+    for i in range(n):
+        matrix.append(list(map(int, input().split())))
+    # 上下左右环形先处理掉
+    for i in range(n):
+        if matrix[i][0] == 1 and visited[i][0] == 0:
+            bfs(matrix, i, 0, n, m, visited, direction)
+        if matrix[i][m-1] == 1 and visited[i][m-1] == 0:
+            bfs(matrix, i, m-1, n, m, visited, direction)
+    for j in range(m):
+        if matrix[0][j] == 1 and visited[0][j] == 0:
+            bfs(matrix, 0, j, n, m, visited, direction)
+        if matrix[n-1][j] == 1 and visited[n-1][j] == 0:
+            bfs(matrix, n-1, j, n, m, visited, direction)
+    # 其他位置为1则是孤岛
+    for i in range(n):
+        for j in range(m):
+            if matrix[i][j] == 1:
+                matrix[i][j] = 0
+            elif matrix[i][j] == 2:
+                matrix[i][j] = 1
+    for i in range(n):
+        print(*matrix[i])
+```
+

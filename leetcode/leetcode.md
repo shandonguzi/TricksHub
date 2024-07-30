@@ -1779,3 +1779,48 @@ if __name__ == '__main__':
 
 ### 9.5 最小生成树
 
+prim算法核心就是三步，即**prim三部曲：
+
+1. 第一步，选距离生成树最近节点
+2. 第二步，最近节点加入生成树
+3. 第三步，更新非生成树节点到生成树的距离（即更新minDist数组）
+
+![image-20240730232520361](./leetcode/image-20240730232520361.png)
+
+```python
+if __name__ == '__main__':
+    V, E = map(int, input().split())
+    matrix = [[10001] * (V+1) for _ in range(V+1)]
+    for i in range(E):
+        v1, v2, val = map(int, input().split())
+        matrix[v1][v2] = val
+        matrix[v2][v1] = val
+    minDist = [10001] * (V+1)
+    isInTree = [False] * (V+1)
+    # 只需要循环 n-1次，建立n-1条边，就可以把n个节点的图连在一起
+    for i in range(1, V):
+        # 三部曲，第一步，选距离生成树最近节点
+        cur = -1
+        minVal = float('inf')
+        for j in range(1, V+1):
+            """
+            选取最小生成树节点的条件：
+            （1）不在最小生成树里
+            （2）距离最小生成树最近的节点
+            """
+            if not isInTree[j] and minDist[j] < minVal:
+                minVal = minDist[j]
+                cur = j
+        # 三部曲，第二步，最近节点(cur)加入生成树
+        isInTree[cur] = True
+        # 三部曲，第三步，更新非生成树节点到生成树的距离(即更新minDist数组)
+        for j in range(1, V+1):
+            if not isInTree[j] and matrix[cur][j] < minDist[j]:
+                minDist[j] = matrix[cur][j]
+    ans = 0
+    # 求和只需V-1条边即可
+    for i in range(2, V+1):
+        ans += minDist[i]
+    print(ans)
+```
+

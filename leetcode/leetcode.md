@@ -1230,7 +1230,7 @@ used思路同40题
 
 入队就标记，而不是出队再标记，否则超时
 
-### 9.3 其他题目（卡玛网）
+### 9.3 深度广度其他题目
 
 - ##### 695（可dfs/bfs，下面答案为bfs）
 
@@ -1335,4 +1335,447 @@ if __name__ == '__main__':
     for i in range(n):
         print(*matrix[i])
 ```
+
+- ##### 103（卡码网）
+
+![image-20240730103440925](./leetcode/image-20240730103440925.png)
+
+```python
+# 反向思考，从边界往上升，两个边界都升到即是答案
+def dfs(matrix, i, j, n, m, Edge, direction):
+    # 已经漫过
+    if Edge[i][j]: return
+    Edge[i][j] = True
+    for k in range(4):
+        new_i, new_j = direction[k][0] + i, direction[k][1] + j
+        if new_i < 0 or new_j < 0 or new_i >= n or new_j >= m:
+            continue
+        # 漫不到新地区
+        if matrix[i][j] > matrix[new_i][new_j]:
+            continue
+        dfs(matrix, new_i, new_j, n, m, Edge, direction)
+
+if __name__ == '__main__':
+    n, m = map(int, input().split())
+    matrix = []
+    direction = [[1, 0], [-1, 0], [0, 1], [0, -1]]
+    firstEgde = [[False] * m for _ in range(n)]
+    secondEgde = [[False] * m for _ in range(n)]
+    for i in range(n):
+        matrix.append(list(map(int, input().split())))
+    for i in range(n):
+        dfs(matrix, i, 0, n, m, firstEgde, direction)
+        dfs(matrix, i, m-1, n, m, secondEgde, direction)
+    for j in range(m):
+        dfs(matrix, 0, j, n, m, firstEgde, direction)
+        dfs(matrix, n-1, j, n, m, secondEgde, direction)
+    for i in range(n):
+        for j in range(m):
+            if firstEgde[i][j] and secondEgde[i][j]:
+                print(i, j)
+```
+
+- ##### 104（卡码网）
+
+![image-20240730115415023](./leetcode/image-20240730115415023.png)
+
+```python
+# dfs遍历，将每个岛屿的面积记为count，遍历后每个岛屿的位置设置为index（因为有visited，所以遍历过的岛屿不会再遍历），然后将index与count的映射记录下来，之后遍历每个水的位置，然后搜索其4个方向的不同岛屿，面积相加即可
+def dfs(matrix, i, j, n, m, visited, direction, index):
+    global count
+    visited[i][j] = 1
+    matrix[i][j] = index
+    count += 1
+    for k in range(4):
+        new_i, new_j = direction[k][0] + i, direction[k][1] + j
+        # 越界/已访问/不是陆地, 跳过
+        if new_i < 0 or new_j < 0 or new_i >= n or new_j >= m or visited[new_i][new_j] or matrix[new_i][new_j] == 0:
+            continue
+        dfs(matrix, new_i, new_j, n, m, visited, direction, index)
+
+if __name__ == '__main__':
+    n, m = map(int, input().split())
+    matrix = []
+    direction = [[1, 0], [-1, 0], [0, 1], [0, -1]]
+    visited = [[0] * m for _ in range(n)]
+    index_to_area = dict()
+    ans = 0
+    for i in range(n):
+        matrix.append(list(map(int, input().split())))
+    index = 2
+    for i in range(n):
+        for j in range(m):
+            # 未访问过的陆地
+            if matrix[i][j] == 1 and visited[i][j] == 0:
+                count = 0
+                dfs(matrix, i, j, n, m, visited, direction, index)
+                index_to_area[index] = count
+                index += 1
+    # 全是海
+    if index == 2:
+        print(1)
+    # 全是陆地
+    elif index == 3 and index_to_area[2] == n * m:
+        print(n*m)
+    else:
+        for i in range(n):
+            for j in range(m):
+                if matrix[i][j] == 0:
+                    already = [0]
+                    area = 1
+                    for k in range(4):
+                        new_i, new_j = direction[k][0] + i, direction[k][1] + j
+                        # 越界/不是陆地/已计算过此岛屿, 跳过
+                        if new_i < 0 or new_j < 0 or new_i >= n or new_j >= m or matrix[new_i][new_j] in already:
+                            continue
+                        already.append(matrix[new_i][new_j])
+                        area += index_to_area[matrix[new_i][new_j]]
+                    ans = max(ans, area)
+        print(ans)
+```
+
+- ##### 110（卡码网）
+
+![image-20240730142901250](./leetcode/image-20240730142901250.png)
+
+```python
+# 最短路径，适合bfs，如何解决字符串间的连接关系问题，自己想的是用字典，但空间时间复杂度均比较大（虽然代码比较简洁），这个答案用的是遍历位置加字母
+def main():
+    N = int(input())
+    beginStr, endStr = map(str, input().split())
+    visited = set()
+    strSet = set()
+    for i in range(N):
+        strSet.add(input())
+    queue, ans = [beginStr], 1
+    while len(queue) != 0:
+        length = len(queue)
+        while length > 0:
+            nowStr = queue.pop(0)
+            visited.add(nowStr)
+            for i in range(len(nowStr)):
+                for j in range(26):
+                    changeStr = nowStr[:i] + chr(ord('a') + j) + nowStr[i+1:]
+                    if changeStr == endStr:
+                        print(ans + 1)
+                        return
+                    if changeStr in strSet and changeStr not in visited:
+                        visited.add(changeStr)
+                        queue.append(changeStr)
+            length -= 1
+        ans += 1
+
+if __name__ == "__main__":
+    main()
+```
+
+- ##### 105（卡码网）
+
+![image-20240730152724122](./leetcode/image-20240730152724122.png)
+
+```python
+# visited访问过的数量等于N则全部可达，使用邻接表存储
+from collections import defaultdict
+
+def dfs(adjacency, start):
+    global visited
+    visited.append(start)
+    for each in adjacency[start]:
+        if each in visited: continue
+        dfs(adjacency, each)
+
+if __name__ == "__main__":
+    N, K = map(int, input().split())
+    adjacency = defaultdict(list)
+    for i in range(K):
+        start, end = map(int, input().split())
+        adjacency[start].append(end)
+    visited = []
+    dfs(adjacency, 1)
+    if len(visited) == N: print(1)
+    else: print(-1)
+```
+
+- ##### 106（卡码网）
+
+![image-20240730153951202](./leetcode/image-20240730153951202.png)
+
+```python
+# bfs，超范围/遇0则边长+1
+def bfs(matrix, i, j, N, M, visited, direction):
+    perimeter = 0
+    queue = [(i, j)]
+    visited[i][j] = 1
+    while len(queue) != 0:
+        length = len(queue)
+        while length > 0:
+            x, y = queue.pop(0)
+            for k in range(4):
+                new_x, new_y = direction[k][0] + x, direction[k][1] + y
+                if new_x < 0 or new_y < 0 or new_x >= N or new_y >= M or matrix[new_x][new_y] == 0:
+                    perimeter += 1
+                    continue
+                if visited[new_x][new_y]:
+                    continue
+                queue.append((new_x, new_y))
+                visited[new_x][new_y] = 1
+            length -= 1
+    return perimeter
+
+
+def main():
+    N, M = map(int, input().split())
+    matrix, visited = [], [[0] * M for _ in range(N)]
+    direction = [[1, 0], [-1, 0], [0, 1], [0, -1]]
+    for i in range(N):
+        matrix.append(list(map(int, input().split())))
+    for i in range(N):
+        for j in range(M):
+            if matrix[i][j] == 1:
+                print(bfs(matrix, i, j, N, M, visited, direction))
+                return
+
+if __name__ == '__main__':
+    main()
+```
+
+### 9.4 并查集
+
+并查集常用来解决连通性问题。大白话就是当我们需要判断两个元素是否在同一个集合里的时候，我们就要想到用并查集。
+
+并查集主要有两个功能：
+
+- 将两个元素添加到一个集合中。
+- 判断两个元素在不在同一个集合
+
+空间复杂度： O(n) ，申请一个father数组。
+
+时间复杂度：在O(logn)与O(1)之间，且随着查询或者合并操作的增加，时间复杂度会越来越趋于O(1)。在第一次查询的时候，相当于是n叉树上从叶子节点到根节点的查询过程，时间复杂度是logn（lognN，n叉树，N个结点，树高lognN），但路径压缩后，后面的查询操作都是O(1)，而 join 函数 和 isSame函数 里涉及的查询操作也是一样的过程。
+
+```c++
+/*
+C++并查集模板
+*/
+
+int n = 1005; // n根据题目中节点数量而定，一般比节点数量大一点就好
+vector<int> father = vector<int> (n, 0); // C++里的一种数组结构
+
+// 并查集初始化
+void init() {
+    for (int i = 0; i < n; ++i) {
+        father[i] = i;
+    }
+}
+// 并查集里寻根的过程
+int find(int u) {
+    return u == father[u] ? u : father[u] = find(father[u]); // 路径压缩
+}
+
+// 判断 u 和 v是否找到同一个根
+bool isSame(int u, int v) {
+    u = find(u);
+    v = find(v);
+    return u == v;
+}
+
+// 将v->u 这条边加入并查集
+void join(int u, int v) {
+    u = find(u); // 寻找u的根
+    v = find(v); // 寻找v的根
+    if (u == v) return ; // 如果发现根相同，则说明在一个集合，不用两个节点相连直接返回
+    father[v] = u;
+}
+```
+
+```python
+"""
+python并查集模板
+"""
+
+# n根据题目中节点数量而定，一般比节点数量大一点就好
+n = 1005 
+father = dict()
+
+# 并查集初始化
+def init():
+    for i in range(n):
+        father[i] = i
+
+# 并查集里寻根的过程
+def find(u):
+    # 路径压缩
+    if u != father[u]:
+        father[u] = find(father[u])
+    return father[u]
+
+# 判断 u 和 v是否找到同一个根
+def isSame(u, v) {
+    u = find(u)
+    v = find(v)
+    return u == v
+}
+
+# 将v->u 这条边加入并查集
+def join(u, v) {
+    u = find(u) # 寻找u的根
+    v = find(v) # 寻找v的根
+    if u == v return # 如果发现根相同，则说明在一个集合，不用两个节点相连直接返回
+    father[v] = u
+}
+```
+
+- ##### 107（卡码网）
+
+![image-20240730164817893](./leetcode/image-20240730164817893.png)
+
+```python
+def init(N):
+    father = dict()
+    for i in range(N+1):
+        father[i] = i
+    return father
+
+def find(u):
+    global father
+    if u != father[u]:
+        father[u] = find(father[u])
+    return father[u]
+
+def isSame(u, v):
+    u = find(u)
+    v = find(v)
+    return u == v
+
+def join(u, v):
+    global father
+    u = find(u)
+    v = find(v)
+    if u == v: return
+    father[v] = u
+
+if __name__ == '__main__':
+    N, M = map(int, input().split())
+    father = init(N)
+    for i in range(M):
+        s, t = map(int, input().split())
+        join(s, t)
+    print(int(isSame(*map(int, input().split()))))
+```
+
+- ##### 108（卡码网）
+
+![image-20240730170021905](./leetcode/image-20240730170021905.png)
+
+```python
+# 第一次isSame即说明边冗余，而N点N边只可能有一个圈，第一次出现Same就是最后一个可删除的
+def init(N):
+    father = dict()
+    for i in range(N+1):
+        father[i] = i
+    return father
+
+def find(u):
+    global father
+    if u != father[u]:
+        father[u] = find(father[u])
+    return father[u]
+
+def isSame(u, v):
+    u = find(u)
+    v = find(v)
+    return u == v
+
+def join(u, v):
+    global father
+    u = find(u)
+    v = find(v)
+    if u == v: return
+    father[v] = u
+
+if __name__ == '__main__':
+    N = int(input())
+    father = init(N)
+    for i in range(N):
+        s, t = map(int, input().split())
+        if isSame(s, t): ans = [s, t]
+        else: join(s, t)
+    print(*ans)
+```
+
+- ##### 109（卡码网）
+
+![image-20240730172024446](./leetcode/image-20240730172024446.png)
+
+```python
+"""
+N点N边，最多一个点有2点入度（3点的话就需要删两条边了）
+情况1：一个2点入度的点，删除最后出现且成环的一条（这两条都成环）
+情况2：一个2点入度的点，删除成环的一条（只有一条成环）
+情况3：全是1点入度的点，删除最后出现且成环的一条
+"""
+
+from collections import defaultdict
+
+def init(N):
+    father = dict()
+    for i in range(N+1):
+        father[i] = i
+    return father
+
+def find(u):
+    global father
+    if u != father[u]:
+        father[u] = find(father[u])
+    return father[u]
+
+def isSame(u, v):
+    u = find(u)
+    v = find(v)
+    return u == v
+
+def join(u, v):
+    global father
+    u = find(u)
+    v = find(v)
+    if u == v: return
+    father[v] = u
+
+def delEdgeIsTree(edges, del_edge, N):
+    for i in range(N):
+        if isSame(*edges[i]) and edges[i] == del_edge:
+            return True
+        join(*edges[i])
+    return False
+
+def removeCircle(edges, N):
+    for i in range(N):
+        if isSame(*edges[i]):
+            return edges[i]
+        join(*edges[i])
+
+if __name__ == '__main__':
+    N = int(input())
+    edges = []
+    inDegree = defaultdict(int)
+    for i in range(N):
+        s, t = map(int, input().split())
+        edges.append([s, t])
+        inDegree[t] += 1
+    father = init(N)
+    wait_to_del_edge = []
+    # 倒叙遍历，如果后边的成环就删除，如果后边的不成环就删除前一条
+    for i in range(N-1, -1, -1):
+        if inDegree[edges[i][1]] == 2:
+            wait_to_del_edge.append(edges[i])
+    if wait_to_del_edge:
+        if delEdgeIsTree(edges, wait_to_del_edge[0], N):
+            print(*wait_to_del_edge[0])
+        else:
+            print(*wait_to_del_edge[1])
+    # 如果都是入度为1的，删除成环的一条即可
+    else:
+        print(*removeCircle(edges, N))
+```
+
+### 9.5 最小生成树
 

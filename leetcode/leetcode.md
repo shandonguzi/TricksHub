@@ -122,7 +122,8 @@ isalpha() | isupper() | isdigit() | islower()          // 是否字母、大写�
 # 求二维数组dp的最大值
 max(map(max, dp))
 
-
+# 按照子列表的第n个元素排序，默认升序倒序用-x[n]
+list_demo.sort(key=lambda x: x[2])
 ```
 
 
@@ -1779,11 +1780,13 @@ if __name__ == '__main__':
 
 ### 9.5 最小生成树
 
-prim算法核心就是三步，即**prim三部曲：
+**prim算法（维护节点）**核心就是三步，即prim三部曲：
 
 1. 第一步，选距离生成树最近节点
 2. 第二步，最近节点加入生成树
 3. 第三步，更新非生成树节点到生成树的距离（即更新minDist数组）
+
+- ##### 53（卡码网）
 
 ![image-20240730232520361](./leetcode/image-20240730232520361.png)
 
@@ -1822,5 +1825,93 @@ if __name__ == '__main__':
     for i in range(2, V+1):
         ans += minDist[i]
     print(ans)
+```
+
+**Kruskal算法（维护边）**：对边的权值进行排序，每次往最小生成树中加入权值最小的边，但加入的边两点不得在此边加入之前就同在树中（并查集判断）
+
+```python
+def init(N):
+    father = dict()
+    for i in range(N+1):
+        father[i] = i
+    return father
+
+def find(u):
+    global father
+    if u != father[u]:
+        father[u] = find(father[u])
+    return father[u]
+
+def isSame(u, v):
+    u = find(u)
+    v = find(v)
+    return u == v
+
+def join(u, v):
+    global father
+    u = find(u)
+    v = find(v)
+    if u == v: return
+    father[v] = u
+
+if __name__ == '__main__':
+    V, E = map(int, input().split())
+    father = init(V)
+    edges = []
+    for i in range(E):
+        v1, v2, val = map(int, input().split())
+        edges.append([v1, v2, val])
+    # 按照权值从小到大排序
+    edges.sort(key=lambda x: x[2])
+    # 从小到大加入最小生成树
+    ans = 0
+    for v1, v2, val in edges:
+        if isSame(v1, v2):
+            continue
+        join(v1, v2)
+        ans += val
+    print(ans)
+```
+
+### 9.6 拓扑排序
+
+**拓扑排序**：给出一个有向图（结点间的先后关系），把这个有向图转成线性的排序，就叫拓扑排序
+
+1. 维护一个结点入度表（每个结点的入度）、出度表（每个结点指向的结点列表），并初始化队列，入度为0的结点入队列
+2. 当队列长度不为0时，出队列，按照出度表将该结点指向的所有结点的入度减1，如果减到0，入队
+3. 循环，直至所有结点已出队（过程中如果队列已空但非所有结点已出队列，说明存在有向环，无解）
+
+- ##### 117（卡码网）
+
+![image-20240731193251220](./leetcode/image-20240731193251220.png)
+
+```python
+from collections import defaultdict
+
+if __name__ == '__main__':
+    N, M = map(int, input().split())
+    inDegree = [0] * N
+    toOther = defaultdict(list)
+    for i in range(M):
+        S, T = map(int, input().split())
+        inDegree[T] += 1
+        toOther[S].append(T)
+        
+    queue = []
+    for i in range(len(inDegree)):
+        if inDegree[i] == 0:
+            queue.append(i)
+    
+    ans = []
+    while len(queue) != 0:
+        point = queue.pop(0)
+        ans.append(point)
+        for peer in toOther[point]:
+            inDegree[peer] -= 1
+            if inDegree[peer] == 0:
+                queue.append(peer)
+    
+    if len(ans) != N: print(-1)
+    else: print(*ans)
 ```
 

@@ -1780,11 +1780,15 @@ if __name__ == '__main__':
 
 ### 9.5 最小生成树
 
-**prim算法（维护节点）**核心就是三步，即prim三部曲：
+**prim算法（维护节点，可负权值）**核心就是三步，即prim三部曲：
 
 1. 第一步，选距离生成树最近节点
 2. 第二步，最近节点加入生成树
-3. 第三步，更新非生成树节点到生成树的距离（即更新minDist数组）
+3. 第三步，更新非生成树节点到**生成树**的距离（即更新minDist数组），注意与dijkstra中minDist区别
+
+—> 番外，记录最小生成树路径，parent，注意 `parent[j] = cur`
+
+—> 时间复杂度O(n^2)，n结点个数
 
 - ##### 53（卡码网）
 
@@ -1799,6 +1803,7 @@ if __name__ == '__main__':
         matrix[v1][v2] = val
         matrix[v2][v1] = val
     minDist = [10001] * (V+1)
+    parent = [-1] * (V+1)
     isInTree = [False] * (V+1)
     # 只需要循环 n-1次，建立n-1条边，就可以把n个节点的图连在一起
     for i in range(1, V):
@@ -1820,6 +1825,7 @@ if __name__ == '__main__':
         for j in range(1, V+1):
             if not isInTree[j] and matrix[cur][j] < minDist[j]:
                 minDist[j] = matrix[cur][j]
+                parent[j] = cur
     ans = 0
     # 求和只需V-1条边即可
     for i in range(2, V+1):
@@ -1828,6 +1834,8 @@ if __name__ == '__main__':
 ```
 
 **Kruskal算法（维护边）**：对边的权值进行排序，每次往最小生成树中加入权值最小的边，但加入的边两点不得在此边加入之前就同在树中（并查集判断）
+
+—> 时间复杂度O(elog(e) + log(e)) = O(eloge)，e边个数
 
 ```python
 def init(N):
@@ -1913,5 +1921,89 @@ if __name__ == '__main__':
     
     if len(ans) != N: print(-1)
     else: print(*ans)
+```
+
+### 9.7 最短路径
+
+**dijkstra算法（权值非负数）**：在有权图中求从起点到其他节点的最短路径算法。三部曲
+
+1. 第一步，选源点到哪个节点近且该节点未被访问过
+2. 第二步，该最近节点被标记访问过
+3. 第三步，更新非访问节点到**源点**的距离（即更新minDist数组），注意与prim中minDist区别
+
+—> 番外，记录最小生成树路径，parent，注意 `parent[j] = cur`
+
+—> 时间复杂度O(n^2)，n结点个数
+
+![image-20240731231249352](./leetcode/image-20240731231249352.png)
+
+```python
+if __name__ == '__main__':
+    N, M = map(int, input().split())
+    matrix = [[float('inf')] * (N+1) for _ in range(N+1)]
+    for i in range(M):
+        S, E, V = map(int, input().split())
+        matrix[S][E] = V
+    start, end = 1, N
+    minDist, visited = [float('inf')] * (N+1), [False] * (N+1)
+    paren = [-1] * (N+1)
+    minDist[start] = 0
+    for i in range(N):
+        # 三部曲之一部曲，选源点到哪个节点近且该节点未被访问过
+        minVal = float('inf')
+        cur = 1
+        for v in range(1, N+1):
+            if not visited[v] and minDist[v] < minVal:
+                minVal = minDist[v]
+                cur = v
+        # 三部曲之二部曲，该最近节点被标记访问过
+        visited[cur] = True
+        # 三部曲之三部曲，更新非访问节点到源点的距离(即更新minDist数组)
+        for v in range(1, N+1):
+            if not visited[v] and matrix[cur][v] != float('inf') and matrix[cur][v] + minDist[cur] < minDist[v]:
+                minDist[v] = minDist[cur] + matrix[cur][v]
+                parent[v] = cur
+        
+        """
+        debug: 打印minDist即可
+        """
+        print(*minDist)
+        
+    if minDist[end] == float('inf'): print(-1)
+    else: print(minDist[-1])
+```
+
+**dijkstra堆排序优化算法**：按照边去遍历，存储也是按边，**注意小顶堆排序按照的是minDist而不是edge[1]**
+
+—> 时间复杂度O(eloge)，空间复杂度O(v+e)，v结点个数，e边个数
+
+```python
+from collections import defaultdict
+import heapq
+ 
+if __name__ == '__main__':
+    N, M = map(int, input().split())
+    edges = defaultdict(list)
+    for i in range(M):
+        S, E, V = map(int, input().split())
+        edges[S].append([E, V])
+    start, end = 1, N
+    minDist, visited = [float('inf')] * (N+1), [False] * (N+1)
+    minDist[start] = 0
+    queue = []
+    # 默认小顶堆, 按第一个元素
+    heapq.heappush(queue, [0, start])
+    while len(queue) != 0:
+        minDist_cur, cur = heapq.heappop(queue)
+        # 可能会有结点多次入队(每条边必会入队一次)，所以这里判断一下
+        if visited[cur]: continue
+        visited[cur] = True
+        for edge in edges[cur]:
+            if not visited[edge[0]] and minDist_cur + edge[1] <  minDist[edge[0]]:
+                minDist[edge[0]] = minDist_cur + edge[1]
+                heapq.heappush(queue, [minDist[edge[0]], edge[0]])
+         
+    if minDist[end] == float('inf'): print(-1)
+    else: print(minDist[-1])
 ```
 

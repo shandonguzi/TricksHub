@@ -1946,7 +1946,7 @@ if __name__ == '__main__':
         matrix[S][E] = V
     start, end = 1, N
     minDist, visited = [float('inf')] * (N+1), [False] * (N+1)
-    paren = [-1] * (N+1)
+    parent = [-1] * (N+1)
     minDist[start] = 0
     for i in range(N):
         # 三部曲之一部曲，选源点到哪个节点近且该节点未被访问过
@@ -1975,7 +1975,7 @@ if __name__ == '__main__':
 
 **dijkstra堆排序优化算法**：按照边去遍历，存储也是按边，**注意小顶堆排序按照的是minDist而不是edge[1]**
 
-—> 时间复杂度O(eloge)，空间复杂度O(v+e)，v结点个数，e边个数
+—> 时间复杂度O(eloge)，空间复杂度O(n+e)，n结点个数，e边个数
 
 ```python
 from collections import defaultdict
@@ -2005,5 +2005,92 @@ if __name__ == '__main__':
          
     if minDist[end] == float('inf'): print(-1)
     else: print(minDist[-1])
+```
+
+**Bellman_ford算法**：的核心思想是对所有边进行松弛n-1次操作（n为节点数量），从而求得目标最短路
+
+![img](./leetcode/20240327102620.png)
+
+minDist[B] 表示 到达B节点 最小权值，minDist[B] 有哪些状态可以推出来？
+
+状态一： minDist[A] + value 可以推出 minDist[B] 状态二： minDist[B]本身就有权值 （可能是其他边链接的节点B 例如节点C，以至于 minDist[B]记录了其他边到minDist[B]的权值）
+
+```python
+# 松弛
+if minDist[B] > minDist[A] + value: minDist[B] = minDist[A] + value
+```
+
+节点数量为n，那么起点到终点，最多是 n-1 条边相连。那么无论图是什么样的，边是什么样的顺序，我们对所有边松弛 **n-1**次就一定能得到起点到达终点的最短距离。
+
+—> 时间复杂度O(n * e)，空间复杂度O(n)，n结点个数，e边个数
+
+![image-20240805194224714](./leetcode/image-20240805194224714.png)
+
+![image-20240805194258288](./leetcode/image-20240805194258288.png)
+
+```python
+if __name__ == '__main__':
+    N, M = map(int, input().split())
+    edges = []
+    for _ in range(M):
+        S, E, V = map(int, input().split())
+        edges.append([S, E, V])
+    start, end = 1, N
+    minDist = [float('inf')] * (N+1)
+    minDist[start] = 0
+    # 松弛N-1次
+    for _ in range(N-1):
+        update = False
+        for edge in edges:
+            S, E, V = edge
+            if minDist[S] == float('inf'):
+                continue
+            elif minDist[S] + V < minDist[E]:
+                minDist[E] = minDist[S] + V
+                update = True
+        # 不更新时说明已最优
+        if not update: break
+        """
+        debug: 打印minDist即可
+        """
+        # print(*minDist)
+        
+    if minDist[end] == float('inf'): print('unconnected')
+    else: print(minDist[end])
+```
+
+**SPFA算法**：Bellman_ford的队列优化算法，松弛时，是基于已经计算过的节点在做的松弛
+
+```python
+from collections import defaultdict
+
+if __name__ == '__main__':
+    N, M = map(int, input().split())
+    edges = defaultdict(list)
+    for _ in range(M):
+        S, E, V = map(int, input().split())
+        edges[S].append([E, V])
+    start, end = 1, N
+    minDist = [float('inf')] * (N+1)
+    minDist[start] = 0
+    queue = [start]
+    while len(queue) != 0:
+        update = False
+        S= queue.pop(0)
+        for edge in edges[S]:
+            E, V = edge
+            if minDist[S] + V < minDist[E]:
+                minDist[E] = minDist[S] + V
+                queue.append(E)
+                update = True
+        # 不更新时说明已最优
+        if not update: break
+        """
+        debug: 打印minDist即可
+        """
+        # print(*minDist)
+        
+    if minDist[end] == float('inf'): print('unconnected')
+    else: print(minDist[end])
 ```
 

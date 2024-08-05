@@ -2063,7 +2063,7 @@ if __name__ == '__main__':
 
 ```python
 from collections import defaultdict
-
+ 
 if __name__ == '__main__':
     N, M = map(int, input().split())
     edges = defaultdict(list)
@@ -2075,14 +2075,53 @@ if __name__ == '__main__':
     minDist[start] = 0
     queue = [start]
     while len(queue) != 0:
-        update = False
         S= queue.pop(0)
         for edge in edges[S]:
             E, V = edge
             if minDist[S] + V < minDist[E]:
                 minDist[E] = minDist[S] + V
                 queue.append(E)
+        # 不更新时说明已最优
+        """
+        debug: 打印minDist即可
+        """
+        # print(*minDist)
+         
+    if minDist[end] == float('inf'): print('unconnected')
+    else: print(minDist[end])
+```
+
+**Bellman_ford之判断负权回路**：
+
+- Bellman_ford：至少松弛n-1次就可最优，如果存在负权回路，则第n次时，如果还有松弛的空间，则存在负权回路
+- SPFA：考虑最极端的情况，所有结点均与其他结点相连，出度为n-1，则每个结点最多入队n-1次（遍历n-1条边），如果一个结点入队n次以上，则存在负权回路
+
+![image-20240805235642251](./leetcode/leetcode.png)
+
+```python
+if __name__ == '__main__':
+    N, M = map(int, input().split())
+    edges = []
+    for _ in range(M):
+        S, E, V = map(int, input().split())
+        edges.append([S, E, V])
+    start, end = 1, N
+    minDist = [float('inf')] * (N+1)
+    minDist[start] = 0
+    flag = False
+    # 松弛N次
+    for i in range(1, N+1):
+        update = False
+        for edge in edges:
+            S, E, V = edge
+            if minDist[S] == float('inf'):
+                continue
+            elif i < N and minDist[S] + V < minDist[E]:
+                minDist[E] = minDist[S] + V
                 update = True
+            elif i == N and minDist[S] + V < minDist[E]:
+                flag = True
+                break
         # 不更新时说明已最优
         if not update: break
         """
@@ -2090,7 +2129,42 @@ if __name__ == '__main__':
         """
         # print(*minDist)
         
-    if minDist[end] == float('inf'): print('unconnected')
+    if flag: print('circle')
+    elif minDist[end] == float('inf'): print('unconnected')
+    else: print(minDist[end])
+```
+
+**Bellman_ford之单源有限最短路**：最多经过k个结点，对应到算法，可以等同于最多经过k+1条边（k+1次松弛），可以求得起点到距起点k+1条边的最短距离。如果只改遍历次数，会报错，原因是如果存在负权回路，minDist是越来越错的（虽然可以用n-1次和n次的minDist是否还会更新判断是否存在负权回路，但是也只是关心minDist是否会变化，实际上minDist数值是错误的），因为存在负权回路时，更新minDist会用到本轮刚更新的minDist，而不是上次遍历的minDist，就可能会导致本该第2次遍历才该变化的边在第1次遍历就发生变化（在不存在负权回路的途中也可能根据本轮的minDist更新minDist，但这样仅提前更新minDist，遍历次数n-1后minDist肯定就不会在变化，根不根据本轮的minDist去更新minDist也就无所谓了，关心的只是最后的结果），所以就会出问题，做法是保存上次遍历的minDist，用上次遍历的minDist更新本轮遍历即可
+
+- Bellman_ford：松弛k+1次，并用上轮minDist更新这轮
+- SPFA：每次都保存队列中结点数量，全完算一次，再保存下次出队的结点数，总共k次
+
+![image-20240805235936799](./leetcode/docker-compose.png)
+
+```python
+if __name__ == '__main__':
+    N, M = map(int, input().split())
+    edges = []
+    for _ in range(M):
+        S, E, V = map(int, input().split())
+        edges.append([S, E, V])
+    start, end, k = map(int, input().split())
+    minDist = [float('inf')] * (N+1)
+    minDist[start] = 0
+    flag = False
+    # 松弛k+1次
+    for i in range(k+1):
+        minDist_copy = minDist.copy()
+        for edge in edges:
+            S, E, V = edge
+            if minDist_copy[S] != float('inf') and minDist_copy[S] + V < minDist[E]:
+                minDist[E] = minDist_copy[S] + V
+        """
+        debug: 打印minDist即可
+        """
+        # print(*minDist)
+        
+    if minDist[end] == float('inf'): print('unreachable')
     else: print(minDist[end])
 ```
 

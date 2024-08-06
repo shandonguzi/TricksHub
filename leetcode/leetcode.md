@@ -2168,3 +2168,38 @@ if __name__ == '__main__':
     else: print(minDist[end])
 ```
 
+**Floyd算法**：多源最短路径，权值正负都可，核心思想动态规划，grid [i] [j] [k] = m，表示 节点i 到 节点j 以[1...k] 集合为中间节点的最短距离为m（经过 [1-k] 不意味着 1-k 每个结点都经过，而是考虑了 1-k 这 k 个结点）
+
+- 递推公式：`grid[i][j][k] = min(grid[i][k][k - 1] + grid[k][j][k - 1]， grid[i][j][k - 1])`，即 i 到 j。经过 [1-k] 是经过 k 和不经过 k 的最小值
+- 初始化：初始输入的边都是`k = 0`，其他位置初始化为`float('inf')`
+- 遍历顺序：k 依赖于 k-1，所以 k 一定是顺序，i、j没有依赖 i-1、j-1 所以遍历顺序都可，也按照顺序，**三者之间必须 k 在最外层**，可以看下图，必须一层一层的向上更新，如果 i/j 最外层，则会变成从前后左右一片一片的更新，是不对的
+- 空间优化：只需要定义 [n+1, n+1, 2] 大小的数组，因为 k 层只依赖 k-1，不需要记录 k-2、k-3等信息
+
+![img](./leetcode/20240424120109.png)
+![image-20240806195453074](./leetcode/image-20240806195453074.png)
+
+```python
+if __name__ == '__main__':
+    N, M = map(int, input().split())
+    grid = [[[float('inf'), float('inf')] for _ in range(N+1)] for _ in range(N+1)]
+    for _ in range(M):
+        S, E, V = map(int, input().split())
+        grid[S][E][0], grid[E][S][0] = V, V
+    for k in range(1, N+1):
+        for i in range(1, N+1):
+            for j in range(1, N+1):
+                grid[i][j][1] = min(grid[i][j][0], grid[i][k][0] + grid[k][j][0])
+        for i in range(1, N+1):
+            for j in range(1, N+1):
+                grid[i][j][0] = grid[i][j][1]
+    plan_ans = []
+    Q = int(input())
+    for _ in range(Q):
+        S, E = map(int, input().split())
+        if grid[S][E][0] == float('inf'):
+            plan_ans.append(-1)
+        else: plan_ans.append(grid[i][j][0])
+    for i in range(Q):
+        print(plan_ans[i])
+```
+

@@ -3,8 +3,8 @@
 ## leetcode（支线任务hot100 100/100）
 
 - C++ STL / python
-- dp 贪心 回溯 ✅ 
-- 图论 ⏭️
+- dp 贪心 回溯 图论 ✅ 
+- 二刷 ⏭️
 
 ## nextcloud
 

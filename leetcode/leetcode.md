@@ -134,61 +134,164 @@ list_demo.sort(key=lambda x: x[2])
 
 ### 2.1 二分查找（704、35、34、69、367）
 
-- ##### 704
+- ##### 704（二刷2024/08/10）
 
 ![image-20230507164508463](./leetcode/image-20230507164508463.png)
 
-![image-20230507164635689](./leetcode/image-20230507164635689.png)
+```python
+class Solution:
+    def search(self, nums: List[int], target: int) -> int:
+        left, right = 0, len(nums) - 1
+        while left <= right:
+            mid = left + (right - left) // 2
+            if nums[mid] == target: return mid
+            elif nums[mid] > target: right = mid - 1
+            else: left = mid + 1
+        return -1
+```
 
-- ##### 35
+- ##### 35（二刷2024/08/10）
 
 ![image-20230508163823044](./leetcode/image-20230508163823044.png)
 
-![image-20230508163854828](./leetcode/image-20230508163854828.png)
+```python
+class Solution:
+    def searchInsert(self, nums: List[int], target: int) -> int:
+        left, right = 0, len(nums) - 1
+        while left <= right:
+            mid = left + (right - left) // 2
+            if nums[mid] == target: return mid
+            elif nums[mid] > target: right = mid - 1
+            else: left = mid + 1
+        return left
+```
 
-- ##### 34
+- ##### 34（二刷2024/08/10）
 
 ![image-20230508164049499](./leetcode/image-20230508164049499.png)
 
-![image-20230508164129695](./leetcode/image-20230508164129695.png)
+```python
+class Solution:
+    def searchRange(self, nums: List[int], target: int) -> List[int]:
+        left, right = 0, len(nums) - 1
+        while left <= right:
+            mid = (left + right) // 2
+            if nums[mid] == target:
+                ans_l, ans_r = mid, mid
+                while ans_l > 0 and nums[ans_l-1] == nums[ans_l]: ans_l -= 1
+                while ans_r < len(nums) - 1 and nums[ans_r] == nums[ans_r + 1]: ans_r += 1
+                return [ans_l, ans_r]
+            elif nums[mid] > target: right = mid - 1
+            else: left = mid + 1
+        return [-1, -1]
+```
 
-- ##### 69
+- ##### 69（二刷2024/08/10）
 
 ![image-20230508164204547](./leetcode/image-20230508164204547.png)
 
-![image-20230508164219387](./leetcode/image-20230508164219387.png)
+```python
+class Solution:
+    def mySqrt(self, x: int) -> int:
+        temp = x
+        while temp * temp > x:
+            temp = temp // 2
+        left, right = temp, temp * 2
+        while left <= right:
+            mid = left + (right - left) // 2
+            if mid * mid == x: return mid
+            elif mid * mid > x: right = mid - 1
+            else: left = mid + 1
+        return right
+```
 
-- ##### 367
+- ##### 367（二刷2024/08/10）
 
 ![image-20230508164255307](./leetcode/image-20230508164255307.png)
 
-![image-20230508164313707](./leetcode/image-20230508164313707.png)
+```python
+class Solution:
+    def isPerfectSquare(self, num: int) -> bool:
+        temp = num
+        while temp * temp > num:
+            temp = temp // 2
+        left, right = temp, temp * 2
+        while left <= right:
+            mid = left + (right - left) // 2
+            if mid * mid == num: return True
+            elif mid * mid > num: right = mid - 1
+            else: left = mid + 1
+        return False
+```
 
 ### 2.2 移除元素（27、26、283、844）
 
-- ##### 27
+- ##### 27（二刷2024/08/10）
 
 ![image-20230513144759722](./leetcode/image-20230513144759722.png)
 
-![image-20230513144825090](./leetcode/image-20230513144825090.png)
+```python
+class Solution:
+    def removeElement(self, nums: List[int], val: int) -> int:
+        length = len(nums)
+        k = 0
+        for i in range(length):
+            if nums[i] != val:
+                nums[k] = nums[i]
+                k += 1
+        return k
+```
 
-- ##### 26
+- ##### 26（二刷2024/08/10）
 
 ![image-20230513145002373](./leetcode/image-20230513145002373.png)
 
-![image-20230513145033859](./leetcode/image-20230513145033859.png)
+```python
+class Solution:
+    def removeDuplicates(self, nums: List[int]) -> int:
+        length = len(nums)
+        k = 1
+        for i in range(1, length):
+            if nums[i] != nums[i-1]:
+                nums[k] = nums[i]
+                k += 1
+        return k
+```
 
-- ##### 283
+- ##### 283（二刷2024/08/10）
 
 ![image-20230513145141636](./leetcode/image-20230513145141636.png)
 
-![image-20230513145159902](./leetcode/image-20230513145159902.png)
+```python
+class Solution:
+    def moveZeroes(self, nums: List[int]) -> None:
+        length = len(nums)
+        k = 0
+        for i in range(length):
+            if nums[i] != 0:
+                nums[k] = nums[i]
+                k += 1
+        for i in range(k, length):
+            nums[i] = 0
+```
 
-- ##### 844
+- ##### 844（二刷2024/08/10）
 
 ![image-20230513145422540](./leetcode/image-20230513145422540.png)
 
-![image-20230513145519326](./leetcode/image-20230513145519326.png)
+```python
+class Solution:
+    def backspaceCompare(self, s: str, t: str) -> bool:
+        s_done, t_done = '', ''
+        len_s, len_t = len(s), len(t)
+        for i in range(len_s):
+            if s[i] != '#': s_done += s[i]
+            else: s_done = s_done[:-1]
+        for i in range(len_t):
+            if t[i] != '#': t_done += t[i]
+            else: t_done = t_done[:-1]
+        return s_done == t_done
+```
 
 ### 2.3 有序数组的平方（977）
 

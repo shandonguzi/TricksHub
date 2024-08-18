@@ -119,11 +119,95 @@ isalpha() | isupper() | isdigit() | islower()          // 是否字母、大写�
 ### python
 
 ```python
+"""
+1. 列表
+"""
+
 # 求二维数组dp的最大值
 max(map(max, dp))
 
 # 按照子列表的第n个元素排序，默认升序倒序用-x[n]
 list_demo.sort(key=lambda x: x[2])
+
+# 列表插入删除(末尾添加、指定位置添加、删除指定位置元素并返回删除元素、删除指定值元素)
+list_demo.append(1)
+list_demo.insert(0, 1)
+del_element = list_demo.pop(0)
+list_demo.remove(1)
+```
+
+```python
+"""
+2. 堆
+"""
+
+import heapq as hq
+
+# 默认小顶堆(需要大顶堆的话压入时取负, 弹出取负即可), 如果每个元素是一个list/tuple则默认按第一个元素排序
+heap = []
+for i in range(100, 0, -1):
+    hq.heappush(heap, i)
+
+# 插入删除操作, heappop弹出最小元素
+hq.heappush(heap, 1)
+hq.heappop(heap)
+
+# 令一个list变成最小堆list, 原地修改无返回值
+hq.heapify(list_demo)
+
+# 第n最大最小元素
+hq.nlargest(1, heap)
+hq.nsmallest(3, heap)
+
+# 自定义比较函数, 重写对象的__lt__函数(即<)
+class Event:
+    def __init__(self, ctime, name) -> None:
+        self._ctime = ctime
+        self._name = name
+
+    def __lt__(self, other):
+        if self._ctime < other._ctime:
+            return True
+        elif self._ctime == other._ctime:
+            if self._eid < other._eid:
+                return True
+            else:
+                return False
+        else:
+            return False
+
+hq.heappush(pq, Event(100, 'a'))
+hq.heappush(pq, Event(20, 'b'))
+hq.heappush(pq, Event(100, 'c'))
+hq.heappush(pq, Event(20, 'd'))
+```
+
+```python
+"""
+3. 位运算
+"""
+
+# 与, 与0与是0, 与自己与是自己
+5 & 0 == 0
+5 & 5 == 5
+
+# 或, 与0或是自己, 与自己或是自己
+5 | 0 == 5
+5 | 0 == 5
+
+# 异或, 与0异或是自己, 与自己异或是0
+5 ^ 0 == 5
+5 ^ 5 == 0
+
+# 非, 所有位置取反。例如，~5（101） = -6，这里的机制是，负数使用补码表示，正数补码就是他本身，而～5对应的32位二进制数是1111 1111 1111 1111 1111 1111 1111 1010，首先判断正负数，最左边1为负0为正，所以这个数是负数，如果是正数直接转化为十进制即可，其次负数转十进制，所有位取反再加一再加符号，取反加一得到0000 0000 0000 0000 0000 0000 0000 0110，加符号得到-6
+~5 == -6
+~(-6) == 
+
+# 逻辑左移、逻辑右移
+5 << 2 == 20
+5 >> 1 == 2
+-6 << 1 == -12
+-5 >> 1 == -3
 ```
 
 
@@ -295,15 +379,25 @@ class Solution:
 
 ### 2.3 有序数组的平方（977）
 
-- ##### 977
+- ##### 977（二刷2024/08/18）
 
 ![image-20230513145745290](./leetcode/image-20230513145745290.png)
 
-![image-20230513150120450](./leetcode/image-20230513150120450.png)
-
-![image-20230513150239189](./leetcode/image-20230513150239189.png)
-
-![image-20230513150546780](./leetcode/image-20230513150546780.png)
+```python
+class Solution:
+    def sortedSquares(self, nums: List[int]) -> List[int]:
+        left, right = 0, len(nums) - 1
+        ans, pos = [0] * len(nums), right
+        while left <= right:
+            if nums[left] * nums[left] >= nums[right] * nums[right]:
+                ans[pos] = nums[left] * nums[left]
+                left += 1
+            else:
+                ans[pos] = nums[right] * nums[right]
+                right -= 1
+            pos -= 1
+        return ans
+```
 
 ### 2.4 长度最小的子数组（209、904、76）
 
@@ -434,6 +528,35 @@ public:
 ![image-20230514114210847](./leetcode/image-20230514114210847.png)
 
 ![image-20230514114744376](./leetcode/image-20230514114744376.png)
+
+### 3.4 寻找循环链表的入口（LCR 022）
+
+- ##### LCR 022
+
+![image-20240818171230723](./leetcode/image-20240818171230723.png)
+
+```python
+"""
+假设链表有a+b的结点, 前a个结点是头结点～入口结点前, 后b个结点是环的长度(包含入口结点)
+fast走的步数f, slow走的步数s, 则 f=2s
+fast比slow多走了n个环的距离, 则 f=s+nb（环有b个结点按说距离是b-1, 但因为是环, 所以1个环距离是b）
+解得 f=2nb, s=nb
+而从头结点到入口结点走的步数是 a+nb
+所以相遇位置再走 a 步即可到达入口结点, 而头结点到入口结点的步数也是 a 步, 所以两者同时出发相遇点即是入口结点
+"""
+
+class Solution(object):
+    def detectCycle(self, head):
+        fast, slow = head, head
+        while True:
+            if not (fast and fast.next): return
+            fast, slow = fast.next.next, slow.next
+            if fast == slow: break
+        fast = head
+        while fast != slow:
+            fast, slow = fast.next, slow.next
+        return fast
+```
 
 ---
 

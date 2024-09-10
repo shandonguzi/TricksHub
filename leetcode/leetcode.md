@@ -164,6 +164,19 @@ list_demo.append(1)
 list_demo.insert(0, 1)
 del_element = list_demo.pop(0)
 list_demo.remove(1)
+
+# 浅拷贝(只复制对象本身及其内容的第一级引用, 不复制对象内部的嵌套对象)
+import copy
+original_list = [1, 2, [3, 4]]
+shallow_copied_list = copy.copy(original_list)
+original_list[2].append(5)
+print("Shallow Copy:", shallow_copied_list)  # 输出: [1, 2, [3, 4, 5]]
+
+# 深拷贝(复制对象及其所有的嵌套对象, 创建所有对象的全新独立副本)
+deep_copied_list = copy.deepcopy(original_list)
+original_list[2].append(6)
+print("Deep Copy:", deep_copied_list)  # 输出: [1, 2, [3, 4, 5]]
+print("Original List:", original_list)  # 输出: [1, 2, [3, 4, 5, 6]]
 ```
 
 ```python
@@ -238,6 +251,27 @@ hq.heappush(pq, Event(20, 'd'))
 5 >> 1 == 2
 -6 << 1 == -12
 -5 >> 1 == -3
+```
+
+```python
+"""
+4. 字典
+"""
+
+# 字典遍历
+for key in dic:
+for key, value in dic.items():
+for key in dic.keys():
+for value in dic.values():
+
+# 删除元素
+del dic['xxx']
+
+# 字典排序(按照value进行从大到小即逆序排序)
+new_dic = dict(sorted(dic.items()))  # 按照key顺序排序
+new_dic = dict(sorted(dic.items(), key=lambda item: item[1], reverse=True))  # 按照value从大到小逆序排序
+
+# 深浅拷贝同列表
 ```
 
 
